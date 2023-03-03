@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>고객정보</legend>
+        <ul>
+            <li>
+                <label for="ID">ID</label>
+                <input type="text" name="ID" size="11" required autofocus placeholder="10자이내">
+            </li>
+            <li>    
+                <label for="PW">PW</label>
+                <input type="password" name="PW" size="10">
+            </li>
+            <li>
+                <label for="배송 주소">배송주소</label>
+                <input type="text" name="배송주소" size="15">
+            </li>
+            <li>
+                <label for="연락처">연락처</label>
+                <input type="tel" name="TEL" size ="12">
+            </li>
+            <li>
+                <label for="배송일자">배송일자</label>
+            <br>
+                출발일자 : <input type="date"> - 도착일자 : <input type="date">
+            </li>
+        </ul>    
+        <br>
+        <fieldset>
+        <legend>참조사항</legend>
+        <label for="readonly">참조사항</label>
+        <input type="text" readonly value="참조">
+        <br>
+        <input type="submit">
+        </fieldset>
+        </fieldset>
+
+
+
+    </form>
+</body>
+</html>

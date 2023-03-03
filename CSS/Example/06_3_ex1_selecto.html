@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 전체 선택자 */
+    *{
+        margin : 0;
+    }
+
+    /* 타입 선택자 */
+    h1 {
+        color: blue;
+    }
+
+    /* 클래스 선택자 (별도의 설정 이름값을 주고 그 이름이 적용된 전체 영역에 적용 시키는 방법)*/
+    .bk_gray{
+        background-color: gray;
+    }
+    
+    /* ID 선택자(부여한 ID에 대해서만 css를 적용) */
+    #cook1{
+        font-size: 150%;
+
+    }
+
+    /* 그룹 선택자(여러 CSS를 여러 그룹에 줄때 사용 하는 방법) */
+    P, em{
+        font-size: 50px;
+    }
+
+</style>
+<body>
+    <div class="bk_gray">
+    <h1>커피</h1>
+    </div>
+    <h1>요리</h1>
+    <span id="cook1">탕수육</span>
+    <P>탕수육 영어로 아시는분?</P>
+    <em>아~ 탕수육</em>
+</body>
+</html>

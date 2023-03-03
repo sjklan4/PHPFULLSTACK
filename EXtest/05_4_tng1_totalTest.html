@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+</head>
+<style>
+    #container{
+        width: 520px;
+        border: 1px solid black;
+        padding : 20px 40px;
+        margin: 0 auto;
+    }
+    fieldset{margin-bottom: 15px;}
+    legend{font-weight: bold;}
+    ul{list-style-type: none;}
+    li{line-height: 30px;}
+</style>
+
+<body>
+    <div id="container">
+        <form action="">
+            <h2><strong>프런트엔드 개발자 지원서</strong></h2>
+                <p>HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
+            <hr>
+
+            <h4>개인정보</h4>
+                <label for="이름">이름</label>
+                <input type="text" name="이름" id="이름" required placeholder="공백 없이 입력하세요">
+                <br>
+                <label for="연락처">연락처</label>
+                <input type="tel" name="연락처" id="연락처">
+            <br>
+            
+            <h4>지원 분야</h4>
+                <ul>
+                    <li>
+                        <input type="radio" name="W_bp" id="W_bp" value="0">
+                        <label for="W_bp">웹 퍼블리싱</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="W_bp" id="W_ca" value="1">
+                        <label for="W_bp">웹 애플리케이션 개발</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="W_bp" id="W_eb" value="2">
+                        <label for="W_bp">개발 환경 개선</label>
+                    </li>
+                </ul>
+            <br>
+            
+            <h4>지원 동기</h4>
+            
+            <textarea name="why" id="why" cols="60" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+            
+            <br>
+            <div>
+                <label for="접수하기"></label>
+                <button type="submit">접수하기</button>
+            
+                <label for="다시쓰기"></label>
+                <button type="submit">다시쓰기</button>
+            </div>
+</form>
+</div>
+</body>
+</html>

@@ -7,8 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- -text : 일반적인 텍스트를 입력할 수 있는 텍스트 박스를 넣습니다.
+			-password : 비밀번호를 입력할 수 있는 필드를 넣습니다.
+			-search : 검색할 때 입력하는 필드를 넣습니다.
+			-url : URL주소를 입력할 수 있는 필드를 넣습니다.(형식 체크를 해줍니다.)
+			-email : 이메일을 입력할 수 있는 필드를 넣습니다.(형식 체크를 해줍니다.)
+			-tel : 전화번호를 입력할 수 있는 필드를 넣습니다.(모바일 페이지에서 이 값을 이용해 바로 전화를 걸 수 있습니다.)
+			-checkbox : 여러개의 체크박스 항목 중 복수를 선택할 수 있습니다. (체크박스 선택시 선택된 체크박스의 value 값이 서버로 전송됩니다.)
+			-radio : 여러개의 라디오 항목 중 1개를 선택할 수 있습니다. (선택된 라디오 항목의 value 값이 서버로 전송됩니다.)
+			-number : 숫자를 입력하기 위한 필드입니다.
+			-range : 슬라이드 막대를 움직여서 값을 입력받을 수 있습니다.
+			-date : 날짜와 시간 데이터를 입력 받을 수 있습니다. (달력) -->
     <form action="">
         <fieldset>
+            
             <legend>고객 정보</legend>
             <label for="id">ID</label>
             <input type="text" name = "id" id="id" size="10" maxlength="6">
@@ -39,14 +51,14 @@
             <br>
             <ul>
                 <li><label for="sb">딸기</label>
-                    <input type="checkbox" name="sb" id="sb"></li>
+                    <input checked type="checkbox" name="sb" id="sb"></li>
                 <li><label for="banana">바나나</label>
                     <input type="checkbox" name="banana" id="banana"></li>
                 <li><label for="wm">수박</label>
                     <input type="checkbox" name="wm" id="wm"></li>
             </ul>
             <label for="sb">딸기</label>
-            <input type="checkbox" name="sb" id="sb">
+            <input checked type="checkbox" name="sb" id="sb">
             <label for="banana">바나나</label>
             <input type="checkbox" name="banana" id="banana">
             <label for="wm">수박</label>
@@ -56,7 +68,7 @@
             <ul>
                 <li>
                     <label for="sb">딸기</label>
-                    <input value ="sb" type="radio" name="fruit" id="r_sb">
+                    <input checked value ="sb" type="radio" name="fruit" id="r_sb">
                 </li>
                 <li>
                     <label for="banana">바나나</label>
@@ -66,7 +78,7 @@
                     <label for="wm">수박</label>
                     <input value ="wm" type="radio" name="fruit" id="r_wm">
                 </li>
-                <!-- 선택 사항중 한가지만 선택 가능하도록 하는 값 -->
+                <!-- 선택 사항중 한가지만 선택 가능하도록 하는 값 'checked 값은 input뒤에 넣어주면 자동으로 체크가 되어서 나온다' -->
                 <!-- value 값은 추후 서버쪽에 넘어 갈때의 값을 지정 하는 값이다. -->
             </ul>
             <br>
@@ -81,10 +93,22 @@
             <br>
             <label for="date">date</label>
             <input type="date" min ="2023-03-01" max ="2023-03-28" >
-            
-            
-            
             <br>
+            <br>
+            <label for="submit">submit</label>
+            <input type="submit" value="Login">
+            <br>
+            <br>
+            <br>
+            <label for="reset">     </label>
+            <input type="reset" value="삭제">
+            <br>
+            <label for="button"></label>
+            <input type="button" value="button">
+
+            <br>
+            <input type="hidden" value="hidden_1">
+            <!-- 유저는 보이지 않고 관리자만 확인 할수 있도록 하는 속성값 -->
             <button>버튼</button>
 
         </fieldset>
