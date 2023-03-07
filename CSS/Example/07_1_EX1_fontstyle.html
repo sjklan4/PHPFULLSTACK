@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            font-family: '굴림','바탕';
+        }
+
+        /* .p1{
+            font-size: medium;
+        }
+        .p2{
+            font-size: xx-small;
+        }
+        .p3{
+            font-size: xx-large;
+        } */
+        .p1_px{
+            font-size: 20px;
+        }
+        .p2_em{
+            font-size: 5em;
+        }
+        /* EM은 부모 함수에 지정된 글자 크기대비 X배수 만큼의 비율로 키운다.-단위 :배울 */
+        .p3_rem{
+            font-size: 5rem;
+        }
+        /* 최상위 요소에 대한 x배만큼의 비율-단위 : 배율 */
+        html{
+            font-size: 10px;
+        }
+        div{
+            font-size: 16px;
+        }
+        .p1_weight1{
+            font-weight: 100;
+        }
+        .p_weight2{
+            font-weight: 500;
+        }
+        .p1_weight3{
+            font-weight: 900;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>글꼴 관련 스타일</h1>
+        <p class="p1_px">폰트 사이즈 px.</p>
+        <p class="p2_em">폰트 사이즈 em.</p>
+        <p class="p3_rem">폰트 사이즈 rem.</p>
+    </div>
+    <div>
+        <p1 class="p1_weight1">폰트100 weight</p>
+        <p1 class="p1_weight2">폰트400 weight</p>
+        <p1 class="p1_weight3">폰트900 weight</p>
+    </div>
+</body>
+</html>

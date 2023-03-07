@@ -1,0 +1,29 @@
+table,tr,td{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+th,td{
+    padding: 10px;
+}
+h1 {
+    color: red;
+    border: 2px solid orange;
+    border-collapse: collapse;
+    display: inline-block;
+}
+h2{
+    color: blue;
+    border: 2px solid orange;
+    border-collapse: collapse;
+    display: inline-block;
+    
+}
+#container{
+    color: green;
+}
+ol{
+    padding: 20px;
+    border: 2px solid orange;
+    border-collapse: collapse;
+    display: inline-block;
+}

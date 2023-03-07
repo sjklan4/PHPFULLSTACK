@@ -1,0 +1,61 @@
+.imge{
+    left: 5px;
+    bottom: 50px;
+    margin: 5px;
+}
+
+
+#container{
+    width: 550px;   
+    margin: 0%;
+    padding: 5px;   
+    position: absolute;
+    top: 206px
+}
+
+
+
+
+#contain{
+    border: 1px dotted rgba(83, 81, 81,0.7);
+    text-align: center;
+}
+
+h2{ text-indent: 5%;
+    color: white;
+}
+
+
+.be{
+    border: 1px solid white;  
+}
+
+#int{
+    color: orange;
+    padding: 1em;
+    background-color: rgba(83, 81, 81,0.5);
+
+}
+
+
+.check{
+    padding: 0.5em;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+.exp{
+    font-weight: bolder;
+    font-size: 20px;
+    color: red;
+}
+.accent{
+    color: blue;
+    font-weight: 400px;
+}
+
+.smalltext{
+    font-size: 0.7em;
+}
