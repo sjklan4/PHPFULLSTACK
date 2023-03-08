@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+</head>
+    <style>
+        main, section, article{
+            padding: 50px;
+            
+        }
+        main{
+            background-color: yellow;
+          
+        }
+        section{
+            background-color: aqua;
+            height: 1000px;
+            /* position: relative; */
+        }
+        article{
+            background-color: blue;
+        }
+        .div_static{
+            background-color: rgb(89, 89, 116);
+        }
+        .div_relative{
+            background-color: rgb(95, 182, 89);
+            /* position: relative;  */
+        }
+
+        .div_absolute{
+            background-color: rgb(203, 121, 50);
+            /* position: absolute;
+            bottom :30px; */
+        }
+
+        .div_fixed{
+            background-color: rgb(201, 52, 176);
+            /* position: fixed;
+            bottom: 10%;
+            right: 10%; */
+        }
+
+        .div_sticky{
+            background-color: aquamarine;
+            position: sticky;
+            top: 0px;
+        }
+        </style>
+
+
+<body>
+    <main>
+        main
+        <section>
+            section
+            <article>
+                article
+                <div class="div_static">staitc</div>
+                <div class="div_relative">relative</div>
+                <div class="div_absolute">absolute</div>
+                <div class="div_fixed">fixed</div>
+                <div class="div_sticky">sticky</div>
+            </article>
+        </section>
+    </main>
+    
+</body>
+</html>

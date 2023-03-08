@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        article{
+            border: 1px solid black;
+            width: 55rem;
+            height: 50rem;
+            position: relative;
+        }
+
+        .staitc{
+            border: 1px solid black;
+            background-color: gainsboro;
+            width: 500px;
+            height: 150px;
+            position: static;
+            margin: 10px;
+            
+        }
+        .relative_1{
+            border: 1px solid black;
+            background-color: gainsboro;
+            width: 500px;
+            height: 150px;
+            position: relative;
+            margin: 10px;
+        }
+        .relative_2{
+            border: 1px solid black;
+            background-color: gainsboro;
+            width: 500px;
+            height: 150px;
+            position: relative;
+            left: 100px;
+            bottom: 50px;
+        }
+
+        .fixed{
+            background-color: black;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            right: 30px;
+            top:30px;
+        }
+
+        .sticky{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            position: sticky;
+            
+        }
+    </style>
+<body>
+    <article>
+        <div class="staitc"> EX et....</div>
+        <div class="relative_1">Loren</div>
+        
+        <div class="relative_2">leoren</div>
+        <div class="fixed">fixed</div>
+        <div class="sticky">stiky</div>
+    </article>
+</body>
+</html>

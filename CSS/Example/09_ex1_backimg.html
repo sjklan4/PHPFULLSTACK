@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* html{background-image: url("/CSS/Example/css/img/apple.JPG");} */
+        .div_img{
+            background-image: url("/CSS/Example/css/img/bobgrg.JPG"),url("/CSS/Example/css/img/chain.JPG");
+            width: 500px;
+            height: 500px;
+        }
+
+        .div_repeat{
+            border: 1px solid black;
+            width: 1000px;
+            height: 1500px;
+            
+        }
+        
+        .div_position{
+            background-image: url("/CSS/Example/css/img/house.JPG");
+            border: 1px solid black;
+            width: 1000px;
+            height: 1000px;
+            /* background-position: bottom 30px right 50px; */
+            /* 왼쪽, 밑으로 */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* size */
+        
+            
+        }
+    </style>
+    <!-- html에 배경을 주는것과 body의 차이점
+        :  head는 구동을 위한 명령들이 들어 가는 부분
+            body태그는 유저들에게 보여주는 영역__ 유저들에게 보여주기 위한
+        명령은 'body'안에 입력! -->
+</head>
+    
+<body>
+   
+    <!-- <h1>background-image</h1>
+    <div class="div_img"></div> -->
+
+    <h1>background-repeat</h1>
+    <div class="div_repeat"></div>
+
+    <h1>background-position</h1>
+    <div class ="div_position"></div>
+    
+</body>
+</html>

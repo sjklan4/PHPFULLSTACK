@@ -1,0 +1,9 @@
+h1{
+    background-color: red;
+    border: 10px dashed black;
+    width: 200px;
+    height: 100px; 
+    padding: 10px; 
+    background-clip: padding-box;
+
+}
