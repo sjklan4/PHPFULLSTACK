@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        /* 컨텐츠 전체를 창에 완전하게 넣기 위해서 0%로 시작 */
+
+        #contain{
+            width: 600px;
+            height: 500px;
+            margin: 2px 5em;
+            
+        }
+        
+        fieldset{
+            background-image: url("/CSS/Example/css/img/want.JPG") ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            /* height: 500px; */
+            
+        }
+
+
+        p{
+            color: blueviolet;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: "맑은고딕";
+        }
+        
+        ul{
+            list-style-type: "*";
+            line-height: 40px;
+            margin: 0;
+            
+        }
+
+        li::marker{
+            color: red;
+        }
+
+        /* point::before{
+            content: 선택한 포인트 모양 입력 ex>"*" 
+            color : 색상 선택
+        } */
+
+        li{
+            font-weight: bolder;
+
+        }
+        
+        input:focus{
+            border: 3px solid red;
+            outline: none;
+        }
+
+        input:checked{
+            color: red;
+        }
+
+        li>input:focus{ 
+            border: 3px solid red;
+            }
+    
+        .memo{
+            font-weight: bolder;
+        }
+        .memo>textarea:focus{
+            border: 5px solid red;
+            outline: none
+            
+        }
+        .memo > label{
+            vertical-align: top;
+            background-color: transparent;
+        }
+
+        input:focus + .gen{
+            color: red;
+        }
+        /* checked ? 차이? */
+
+        h2{
+            background-color: black;
+            width: 320px;
+            display: inline;
+            font-size: 20px;
+            position: relative;
+            bottom: 40px;
+            left: 55px;
+            color: white;
+            display: none;            
+        }
+
+        button:hover + h2{
+            display: block;
+        }
+
+    </style>
+<body>
+    <form action="">
+        <div id="contain">
+            <fieldset>
+                <legend><p>I want You!</p></legend> 
+                <ul>
+                    <li><label for="name">이름 </label>
+                        <input type="text" id="name" autofocus required size="20" style="background-color: transparent">
+                    </li>
+                    
+                    <li><label for="number">나이</label> 
+                        <input type="number" id="number" min="20" required size="20" style="background-color: transparent">
+                    </li>
+                    
+                    <li><label for="sxm" id="gen">성별</label>
+
+                        <input type="radio"  id="gen2" name="sx" required>
+                        <label class="gen" for="gen2">남자</label>
+
+                        <input type="radio" id="gen3" name="sx">
+                        <label class="gen"  for="gen3">여자</label>
+                    </li>
+                </ul>
+            <br>
+                <div class="memo">
+                    <label for="memo">요청사항</label>
+                        <textarea name="요청사항" id="memo" cols="30"
+                            rows="10" style="background-color: transparent" placeholder="요청 사항 입력"></textarea>   
+                </div>
+
+                    <button type="submit">보내기</button> 
+                    <h2>내용을 다시 한 번 확인해 주세요.</h2>
+            </fieldset>
+        </div>
+    </form>    
+</body>
+</html>

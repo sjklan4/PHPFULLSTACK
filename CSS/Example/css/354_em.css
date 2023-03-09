@@ -1,0 +1,41 @@
+#contain{
+    width: 600px;
+}
+
+nav ul li{
+    border-right: 1px solid gray;
+    background-color: gainsboro;
+    width: 70px;
+    height: 20px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    list-style-type: none;
+    box-shadow: 2px 1px 5px gray;
+}
+
+li:hover{ 
+    background-color: #555}
+
+
+li:active{
+    background-color: brown;
+}
+
+a:hover{
+    color: #fff;
+}
+
+
+.word:hover{ 
+    background-color: #b30000;
+    color: #fff;
+
+}
+
+
+
+
+
+
+
