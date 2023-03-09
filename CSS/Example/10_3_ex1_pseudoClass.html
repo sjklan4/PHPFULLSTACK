@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            :link - 아직 방문하지 않은 요소에만 스타일을 적용(로그인 적용시 주로 이용)
+            :visited - 방문 한적이 있는 요소에만 스타일을 적용
+            :hover - 마우스 포인터를 요소 위에 올렸을대 스타일 적용
+            :active - 활성화한 요소에 스타일을 적용
+            :focus - 포커스를 받은 요소에 스타일을 적용 
+            -위속성값을 사용시 link부터 순서대로 주는 것이 좋다.-
+
+            :nth-child(n) - n번째 하위속성에 스타일 적용(odd, even으로 홀짝 번을 나눌수 있다)
+            A:nth-of-type() : 해당 하위속성의 타입이 A에 들어간다.
+                    div h2:nth-of-type :div 테그 안에 h2 부분에 스타일 지정
+            :not(selector): 선택한 하위속성 외에 스타일을 적용 한다.
+            
+            
+            ::first-letter :첫 단어 스타일 적용
+            ::first-line   : 첫 문장에만 스타일 적용
+
+
+
+        */
+
+        /* a:link{
+            color: aqua;
+            font-size: 20px;
+        }
+
+        a:visited{
+            color: blue;
+            font-size: 20px;
+        }
+        
+        a{
+            border: 1px solid black;
+        
+
+        } */
+
+
+        /* p{
+            
+            background-color: aquamarine;
+            padding: 40px;
+            float: left;
+            font-size: 30px;
+        } */
+        /* p:hover{ background-color: blueviolet;} */
+
+        nav ul li{
+            float: left;
+            width: 140px;
+            height: 20px;
+            list-style: none;
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 10px;
+        }
+        li:hover{ background-color: red;}
+
+
+        input:focus{
+            border: 6px solid red;
+            outline: none;
+        }
+        /* 바깥 남은 라인을 없어지게 하기 위해 'outline 속성을 none으로 준다' */
+    
+        li:active{
+            background-color: aquamarine;
+        }
+    
+        #target_1:target{
+            background-color: goldenrod;
+        }
+
+        /* div :nth-child(even){
+            background-color: yellow;
+        }
+        
+        div h2:nth-of-type(2){
+            background-color: greenyellow;
+        } */
+    
+        .container :not(h2) {
+            background-color: #ff00e6;
+        }
+    
+
+        .container_1 .pf_1::first-letter{
+            background-color: rgb(235, 118, 34);
+        }
+
+        .container_1 .pf_2::first-line{
+            background-color: rgb(235, 118, 34);
+        }
+
+        .pf_1 > span ::before{
+            content : '화려해';
+            color : red;
+        }
+
+
+        .pf_2 > span ::after{
+            content: '중요';
+            color: red;
+        }
+
+        .container_1 p::selection{
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <fieldset>
+        <legend> 구조 가상 클래스</legend>
+        <div class="container">
+            <h2>h2_1</h2>
+            <p>p_1</p>
+            <p>p_2</p>
+            <h2>h2_1</h2>
+            <p>p_3</p>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend> 가상요소</legend>
+        <div class="container_1">
+            <h2>h2_1</h2>
+            <p class="pf_1">이 점점 <span>화려해지고 인터넷속도가</span>  빨라지면서 
+                웹페이지들은 점점 빨라지고 있고</p>
+            <p class="pf_2">디자인은 갈수록 <span>중요해지고</span> 있기 때문에 
+                웹사이트에는(특히 국내에서) 정말 많은</p>
+            <p class="pf_3">이미지가 들어가고 있다. 근데 HTML 코드를 
+                보다보면 정말 흔히 볼 수 있는 이미지버튼의 형태가</p>
+        </div>
+    </fieldset>
+
+
+
+
+
+
+
+    <!-- <a href="https://naver.com">NAVER</a><br>   
+    <a class="nav_link" href="#">NAVER</a>
+    <div class="menu">
+        <p>메뉴1</p>
+        <p>메뉴2</p>
+        <p>메뉴3</p>
+        <p>메뉴4</p>
+        <p>메뉴5</p>
+    </div> -->
+    <br><br><br><br>
+    <nav>
+        <ul>
+            <li><a href="#target_1">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <label for="input_1">input</label>
+        <input type="text"  id="input_1" width="30px" height="50px">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <span id = "target_1">target 테스트</span>
+</body>
+</html>
