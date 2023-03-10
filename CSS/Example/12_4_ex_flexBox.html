@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        .flex_container{
+            background-color: gray;
+            margin: 10px;
+            width: 60vw;
+            height:60vh;
+            display: flex;
+            /* flex-direction : 주축과 방향을 지정하는 속성  */
+            /* reverse 적용시 방향이 바뀌는 설정(colum, row) */
+            /* flex-direction:row; */
+
+            /* flex-wrap : 항목의 줄을 바꿀지 여부를 지정 */
+            /* flex-wrap: wrap */
+
+            /* flex-flow : flex-direction과 flex-wrap을 한번에 지정합니다.(colum,row) */
+            /* flex-flow: row; */
+            
+            /* justify-content : 주축 방향을 기준으로 정렬 */
+            /* justify-content: space-between; */
+
+            /* aligh-items : 교차축을 기준으로 정렬 합니다. */
+                /* (enc, center로 위치지정) */
+            /* align-items : flex-start; */
+            
+            /* align-self : 교차측을 기준으로
+                            특정 항목만 정렬합니다.(start(고정), end) */
+            
+            /* aligh-content : 교차축 기준으로 여러줄일 때 정렬 방법을 지정(end,start,around,center) */
+                align-content: space-around;
+
+
+
+        }
+
+        .flex_item{
+            border: 1px solid rgb(235, 234, 141);
+            width :15vw;
+            height: 15vh;
+            background-color: blue;
+        }
+        .item_3{
+            /* align-self: center; */
+        }
+
+    </style>
+<body>
+    <div class="flex_container">
+
+        <div class="flex_item">1</div>
+        <div class="flex_item">2</div>
+        <div class="flex_item item_3">3</div>
+        <div class="flex_item">4</div>
+        <div class="flex_item">5</div>
+
+    </div>
+</body>
+</html>

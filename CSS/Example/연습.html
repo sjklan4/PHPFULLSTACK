@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+    .pf_1 > span::before{
+            content : '화려해';
+            color : red;
+        }
+
+    .pf_2 > span::after{
+            content: '중요해지고';
+            color: #ff00e6;
+        }
+    
+    .container_1 p::selection{
+            background-color: aqua;
+        }
+
+</style>
+<body>
+    <fieldset>
+        <legend> 가상요소</legend>
+        <div class="container_1">
+            <h2>h2_1</h2>
+            <p class="pf_1">이 점점 <span>화려해</span>지고 인터넷속도가  빨라지면서 
+                웹페이지들은 점점 빨라지고 있고</p>
+            <p class="pf_2">디자인은 갈수록 <span>중요해지고</span> 있기 때문에 
+                웹사이트에는(특히 국내에서) 정말 많은</p>
+            <p class="pf_3">이미지가 들어가고 있다. 근데 HTML 코드를 
+                보다보면 정말 흔히 볼 수 있는 이미지버튼의 형태가</p>
+        </div>
+    </fieldset>
+
+</body>
+</html>

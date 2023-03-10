@@ -16,7 +16,7 @@
 
             :nth-child(n) - n번째 하위속성에 스타일 적용(odd, even으로 홀짝 번을 나눌수 있다)
             A:nth-of-type() : 해당 하위속성의 타입이 A에 들어간다.
-                    div h2:nth-of-type :div 테그 안에 h2 부분에 스타일 지정
+            div h2:nth-of-type :div 테그 안에 h2 부분에 스타일 지정
             :not(selector): 선택한 하위속성 외에 스타일을 적용 한다.
             
             
@@ -107,10 +107,10 @@
         }
 
         .pf_2 > span ::after{
-            content: '중요';
-            color: red;
+            content: '중요해지고';
+            color: #ff00e6;
         }
-
+    
         .container_1 p::selection{
             background-color: aqua;
         }
@@ -143,12 +143,6 @@
         </div>
     </fieldset>
 
-
-
-
-
-
-
     <!-- <a href="https://naver.com">NAVER</a><br>   
     <a class="nav_link" href="#">NAVER</a>
     <div class="menu">
@@ -171,13 +165,9 @@
     <br>
     <br>
     <br>
-    <br>
     <label for="input_1">input</label>
         <input type="text"  id="input_1" width="30px" height="50px">
 
-        <br>
-        <br>
-        <br>
         <br>
         <span id = "target_1">target 테스트</span>
 </body>
