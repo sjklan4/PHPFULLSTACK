@@ -1,0 +1,86 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    scroll-behavior: smooth;
+    }
+    section{
+    
+    }
+    .wrapper{
+       
+    }
+    
+    .hero{
+       
+    }
+    
+    
+    figure{
+       
+    }
+    
+    ul{
+       
+        
+        }
+    
+    
+    
+    li{ 
+    }
+    
+    li p{
+        
+    }
+    img{ 
+       
+        
+    }
+    article{
+       
+        }
+    
+    article p{
+       
+    }
+    
+    
+    footer{
+       
+    }
+    
+    figcaption{
+       
+    }
+    
+    h1{
+        
+    }
+    
+    
+    h2,
+    
+    h3{
+        
+    
+    }
+    
+    h4,
+    h5,
+    h6 {
+    font-family: 'Playfair Display', serif;
+    }
+    
+    p{
+      
+    
+    }
+    
+    a {
+        
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    a:hover{
+        background-color: rgba(218, 165, 32, 0.604);
+    }
