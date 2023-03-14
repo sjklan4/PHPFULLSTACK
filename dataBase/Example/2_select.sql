@@ -98,7 +98,9 @@ WHERE emp_no =ANY (
 							WHERE title = 'Senior Engineer' AND to_date >= NOW()
 							);
 
-
+-- 현재 직책이 "Staff" 인 사원의 모든 정보를 조회 하세요
+SELECT *
+FROM emp
  
 
 
