@@ -36,13 +36,21 @@ ON dep.dept_no = dmp.dept_no;
 
 
 -- 5. 현재 월급의 상위 10위까지 사원의 사번, 풀네임, 월급을 출력해 주세요
-SELECT emp.emp_no, emp.first_name, emp.last_name, RANK() over (order by sal.salary DESC) rk
+SELECT a.*
+FROM (SELECT emp.emp_no, emp.first_name, emp.last_name, sal.salary, RANK() over (ORDER BY salary DESC) rn
 FROM employees emp
 inner JOIN salaries sal ON emp.emp_no = sal.emp_no
-where	sal.to_date >= NOW() AND rk <=10 ;
+where	sal.to_date >= NOW()) a
+WHERE a.rn <= 10 ;
+
+
+
 SELECT emp_no FROM(	
 						SELECT emp_no, salary, RANK() over(ORDER BY salary DESC) RN FROM salaries )RNK
 						WHERE RNK.RN <= 10;
+
+
+                        
 			
 	
 -- 6. 각 부서의 부서장의 부서명, 풀네임 입사일을 출력해 주세요.
