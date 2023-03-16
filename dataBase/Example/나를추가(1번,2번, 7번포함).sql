@@ -11,7 +11,7 @@ VALUES
 (
 	500000
 	,DATE(19900606)
-	,'Sang Joon'
+	,'SangJoon'
 	,'Park'
 	,'M'
 	,NOW()
