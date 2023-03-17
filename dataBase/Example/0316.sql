@@ -31,8 +31,9 @@ SELECT SUBDATE(NOW(), INTERVAL 1 DAY);
 
 SELECT ADDTIME(NOW(), '1:1:1');
 
-SELECT emp_no, RANK() over(ORDER BY salary ASC) r, salary
-FROM salaries; 
+SELECT emp_no, RANK() over(ORDER BY salary DESC) r
+FROM salaries;
+
 
 SELECT emp_no, ROW_NUMBER() over(ORDER BY salary ASC), salary
 FROM salaries;

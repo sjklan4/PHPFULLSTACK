@@ -38,7 +38,7 @@ VALUES
 SELECT employees.emp_no, employees.first_name
 FROM employees
 JOIN salaries ON employees.emp_no = salaries.emp_no
-WHERE salary = (SELECT MAX(salary) FROM salaries);
+WHERE salary = (SELECT rank(salary) FROM salaries);
 
 SELECT employees.emp_no, employees.first_name
 FROM employees
