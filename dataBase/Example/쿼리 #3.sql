@@ -17,10 +17,10 @@ SET emp_no = 500000
  , first_name='Sangjoon'
  , last_name='Park'
  , gender = 'M'
- WHERE emp_no = 500000;
+ WHERE emp_no = 500001;
  
 
  SELECT *
  FROM employees
- WHERE emp_no = 500000;
+ WHERE emp_no = 500001;
  
