@@ -10,7 +10,7 @@
 
 
 <?php
-$sco = 90;
+$sco = 40;
 $you = "너의 점수는";
 $you_1 = "입니다. 잘했습니다.";
 $you1 = "이다 공부좀 하자.";
@@ -69,24 +69,22 @@ else{
         echo $you,$sco,$you_1,$result;
     }
     else{
-        if($sco <80)
-        {
-        elseif($sco >= 70 )
-        {
-            $result = "<C>";
+            if($sco >= 70 )
+            {
+                $result = "<C>";
+            }
+            elseif($sco >= 60 )
+            {
+                $result = "<D>";
+            }
+            else
+            {
+                $result =  "<F>";
+            }
+            echo $you,$sco,$you1,$result;
         }
-        elseif($sco >= 60 )
-        {
-            $result = "<D>";
-        }
-        else
-        {
-            $result =  "<F>";
-        }
-        }
-        echo $you,$sco,$you1,$result;
+        
     }
-}
 
 
 
