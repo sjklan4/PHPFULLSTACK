@@ -73,41 +73,33 @@
 // }
 
 
-$count = 5;
-for($j =1; $j <= $count; $j++)
-{
-    for ($i=$count-$j; $i >0 ; $i--) 
-    { 
-        echo "?";
-    }
+// $count = 5;
+// for($j =1; $j <= $count; $j++)
+// {
+//     for ($i=$count-$j; $i >0 ; $i--) 
+//     { 
+//         echo "?";
+//     }
 
-    for ($p=0; $p < $j ; $p++) 
-    { 
+//     for ($p=0; $p < $j ; $p++) 
+//     { 
+//         echo "*";
+//     }
+
+//     for($w=1; $w <$j; $w++)
+//     {
+//         echo"*";
+//     }
+//     echo"\n";
+// }
+$count1 = 5;
+for($z =1; $z <= $count1; $z++)
+{
+    for ($m = $count1-$z; $m>0; $m--){
         echo "*";
     }
-
-    for($w=1; $w <$j; $w++)
-    {
-        echo"*";
-    }
-    echo"\n";
-}
-
-for($z =1; $z >= $count; $z--)
-{
-    for ($x=$count+$z; $x <=$count ; $x++) 
-    { 
-        echo "?";
-    }
-
-    for ($p=0; $p < $j ; $p++) 
-    { 
-        echo "*";
-    }
-
-    for($w=1; $w <$j; $w++)
-    {
-        echo"*";
+    for($n = $count1-$m; $n>0; $n--){
+        echo"?";
     }
     echo"\n";
 }
