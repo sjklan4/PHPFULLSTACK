@@ -47,10 +47,10 @@
     // $arr_temp3 = $arr_temp[2][0];
     // $arr_temp3_c = array(9,10,11), "\n";
 
-    $arr_temp4 = $arr_temp[2][1];
-    echo $arr_temp4[1];
-    print_r($arr_temp4);
-    echo $arr_temp4[0];
+    // $arr_temp4 = $arr_temp[2][1];
+    // echo $arr_temp4[1];
+    // print_r($arr_temp4);
+    // echo $arr_temp4[0];
     //[첫번째 범위 순서 : Y열][범위 안에서의 순서 : X열] : y,x축으로 리스트 표기법은 y는 음의방향, x는 양의 방향
     //3차원 값 출력 :Y열 순서 안에, X열 순서안에 ,Z열의 순서 - 배열의 순서 안에 순서 안에 순서
 
@@ -59,7 +59,62 @@
     // unset($arr_week[2]);
     // print_r($arr_week);
 
-//test commmit
+// array_diff() : 중복되지 않는 원소를 반환
+    // $arr_diff_1 = array("a","b","c");
+    // $arr_diff_2 = array("a","b","d");
+    // $arr_diff = array_diff($arr_diff_1,$arr_diff_2); // 앞쪽 범위에 있는 원소중에 뒤에 있는 원소에 없는것을 찾아 주는것(기준점과 비교해서 없는것 찾을것)
+    // print_r($arr_diff);
+
+// 배열위 정렬 : asort(), arsort(), ksort(), krsort();
+    // asort(); - 정상적인 순서대로 배치를 바꿔서 출력해준다.
+    // $arr_asort = array("b","a","d","c","e"); 
+    // $arr_asort_result = asort($arr_asort);
+    // print_r($arr_asort);
+
+    //arsory(); 내림차준으로 정렬을 해준다.
+    // $arr_arsort = array("b","a","d","c","e"); 
+    // arsort($arr_arsort);
+    // print_r($arr_arsort);
+
+    //ksort() : 연상 배열에서 정렬을 만들어준다.(키값을 기준으로 배열을 만들어 준다.)
+    // $arr_ksort = array("key1" => "val1" 
+    //                     , "key3"=>"val2"
+    //                     , "key2"=>"val3"
+    //                     , "key4"=>"val4");
+    // ksort($arr_ksort);
+    // print_r($arr_ksort);
+
+    // $arr_krsort = array("key1" => "val1" 
+    //                     , "key3"=>"val2"
+    //                     , "key2"=>"val3"
+    //                     , "key4"=>"val4");
+    // ksort($arr_krsort);
+    // print_r($arr_krsort);
+
+    // array의 사이즈를 반환하는 함수 : count();
+    // echo count($arr_krsort);
+
+//foreach( $array as $key => $val){}
+//foreach( $array as  => $val){}    
+
+    // $arr1 = array("key1" => "val1" 
+    //                 , "key3"=>"val2"
+    //                 , "key2"=>"val3"
+    //                 , "key4"=>"val4");
+
+    // foreach($arr1 as $val){
+    //     echo $val."\n";
+
+    // }
+// foreach(범위 변수 이름 as 값을 가져오는 방법 - $키이름 => $값 or as $값 만 사용시 출력 문구에 "표현하려는 키값 = ". $받아오려는 값)
+
+
+
+
+
+
+
+
 
 
 ?>
