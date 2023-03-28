@@ -50,7 +50,6 @@ $arr_ass = array("zazang" =>"nuddle"
             echo "$key : ".$val."\n";
         }
         
-        
     }
 var_dump($arr_ass);
 

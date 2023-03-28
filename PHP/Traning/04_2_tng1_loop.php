@@ -8,19 +8,19 @@
 // ***
 // ****
 // *****
-// $num = 5;
-// for ($str=0; $str <= $num ; $str++) 
-// { 
-//     for($str1 = $num - $str; $str1>0;$str1--)
-//     {
-//         echo " ";
-//     }
-//     for($str2 = 0; $str2 < 2*$str-1; $str2++)
-//     {
-//         echo "*";
-//     }
-// echo"\n";
-// }
+$num = 5;
+for ($str=0; $str <= $num ; $str++) 
+{ 
+    for($str1 = $num - $str; $str1>0;$str1--)
+    {
+        echo " ";
+    }
+    for($str2 = 0; $str2 < 2*$str-1; $str2++)
+    {
+        echo "*";
+    }
+echo"\n";
+}
 
 
 // $s=5;
@@ -92,17 +92,17 @@
 //     }
 //     echo"\n";
 // }
-$count1 = 5;
-for($z =1; $z <= $count1; $z++)
-{
-    for ($m = $count1-$z; $m>0; $m--){
-        echo "*";
-    }
-    for($n = $count1-$m; $n>0; $n--){
-        echo"?";
-    }
-    echo"\n";
-}
+// $count1 = 5;
+// for($z =1; $z <= $count1; $z++)
+// {
+//     for ($m = $count1-$z; $m>0; $m--){
+//         echo "*";
+//     }
+//     for($n = $count1-$m; $n>0; $n--){
+//         echo"?";
+//     }
+//     echo"\n";
+// }
 
   // for ($q=$count-$j; $q >0 ; $q--) 
     // { 
