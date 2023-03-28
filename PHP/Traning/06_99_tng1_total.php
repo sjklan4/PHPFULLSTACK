@@ -22,7 +22,25 @@
 //     fnc_my_len($arr_bass);
 
 
-// 별찍기를 함수로 만들어 봅시다.
+// 별찍기를 함수로 만들어 봅시다..
+function fnc_star_print($star)
+{
+    for($str2 = 0; $str2 < $star; $str2++)
+            {
+                echo"*";
+            }
+            echo"\n";
+}
+$star = 3;
+for($i = 1; $i <= $star; $i++)
+{
+    fnc_star_print($star);
+}
+
+
+
+
+
 // function fnc_star($star)
 // {
 //     for($str = 1 ; $str <=$star; $str++)
@@ -54,22 +72,22 @@
 
 
 
-function fnc_star($star)
-{
-    for ($str=1 ; $str <= $star ; $str++) 
-    { 
-        for($str1 = $star - $str; $str1 > 0 ; $str1--)
-        {
-            echo "?";
-        }
-        for($str2 = 0; $str2 < 2*$str-1; $str2++)
-        {
-            echo "*";
-        }
-    echo"\n";
-    }
-}
-fnc_star(7);
+// function fnc_star($star)
+// {
+//     for ($str=1 ; $str <= $star ; $str++) 
+//     { 
+//         for($str1 = $star - $str; $str1 > 0 ; $str1--)
+//         {
+//             echo "?";
+//         }
+//         for($str2 = 0; $str2 < 2*$str-1; $str2++)
+//         {
+//             echo "*";
+//         }
+//     echo"\n";
+//     }
+// }
+// fnc_star(7);
 
 
 
