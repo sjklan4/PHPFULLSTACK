@@ -23,7 +23,7 @@
 
 
 // 별찍기를 함수로 만들어 봅시다..
-function fnc_star_print($star)
+function star_print($star)
 {
     for($str2 = 0; $str2 < $star; $str2++)
             {
@@ -31,13 +31,19 @@ function fnc_star_print($star)
             }
             echo"\n";
 }
-$star = 3;
+
+$star = 6;
 for($i = 1; $i <= $star; $i++)
 {
-    fnc_star_print($star);
+    star_print($star);
 }
+echo"\n";
 
-
+for($t = 1; $t <= $star; $t++)
+{
+    star_print($t);
+}
+echo"\n";
 
 
 
