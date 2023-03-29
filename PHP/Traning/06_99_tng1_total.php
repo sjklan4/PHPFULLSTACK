@@ -1,5 +1,7 @@
 <?php
 
+
+
 //1. 배열의 길이를 바환하는 my_len() 함수를 작성하시오.
 
 
@@ -32,18 +34,83 @@ function star_print($star)
             echo"\n";
 }
 
-$star = 6;
-for($i = 1; $i <= $star; $i++)
+function empt_print($emp)
 {
-    star_print($star);
+    for($em1 = 0; $em1 < $emp; $em1++)
+        {
+            echo "?";
+        }
+        echo"\n";
 }
-echo"\n";
 
-for($t = 1; $t <= $star; $t++)
+$star = 6;
+$emp = $star;
+for($tr = 1; $tr<=$star ; $tr++)
 {
-    star_print($t);
+    for($e = $star-$tr; $e > 0; $e--)
+    {
+        empt_print($e);
+    }
+    for($tr1 = 0; $tr1 <= 2*$e-1; $tr1++)
+    {
+        star_print($tr1);
+        
+    }
+    
 }
-echo"\n";
+echo  star_print($star),"\n";
+///----------------------------------------------
+// for($i = 1; $i <= $star; $i++)
+// {
+//     star_print($star);
+// }
+// echo"\n";
+
+// for($t = 1; $t <= $star; $t++)
+// {
+//     star_print($t);
+// }
+// echo"\n";
+
+// for($s = $star ; $s > 0; $s--)
+// {
+//     star_print($s);
+// }
+// echo star_print($s),"\n";
+
+// for($tr = 1; $tr<=$star ; $tr++)
+// {
+//     for($e = $emp; $e > 0; $e--)
+//     {
+//         empty($e);
+//     }
+//     for($tr1 = 1; $tr1 <=$star; $tr1++)
+//     {
+//         star_print($tr1);
+//     }
+//     echo  star_print($tr1),"\n";
+// }
+
+
+
+
+// for($tr = 1; $tr<=$star ; $tr++)
+// {
+//     for($e = $star-$tr; $e > 0; $e--)
+//     {
+//         empt_print($e);
+//     }
+//     for($tr1 = 0; $tr1 <= 2*$e-1; $tr1++)
+//     {
+//         star_print($tr1);
+        
+//     }
+    
+// }
+// echo  star_print($star),"\n";
+
+
+//------------------------------------------------위에는 function전용=------------------
 
 
 
