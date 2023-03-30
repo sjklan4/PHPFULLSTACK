@@ -8,10 +8,13 @@ CONSTRAIN FK명 FOREIGN KEY(컬럼) REFERENCE 참조테이블(참조컬럼) [ON 
 컬럼 데이터타입 CONSTRAINT UK명 UNIQUE -- UK설정
 );
 
+
+
 NULL / NOT NULL / DEFAULT / AUTO_INCREMENT / 
 PRIMARY KEY / UNIQUE KEY / FOREIGN KEY
 
-2. 테이블 변경
+
+2. 테이블 변경 : 사용시 주의사항 : alter 값을 넣어 줄시 테이블이 이미 다 완성된 다음에는 세로운 쿼리를 형성해서 작업을 하도록한다(이유는 이미 데이블이 완성된 쿼리에서는 작업이 순서대로 일어나기 때문에 오류가 날수도 있다.)
 	- 컬럼 추가
 		ALTER TABLE 테이블명 ADD COLUMN 컬럼 데이터타입;
 	- 데이터타입 변경
