@@ -39,19 +39,39 @@ class student
 //class를 선언
 $obj_student = new Student; //클래스를 불러온다.
 // class의 method를 호출
-$obj_student->print_student("홍길동",27);
+// $obj_student->print_student("홍길동",27);
 
 // class의 멤버변수 사용방법
-$obj_student->std_name = "갑돌이";
-echo $obj_student->std_name,"\n";
+// $obj_student->std_name = "갑돌이";
+// echo $obj_student->std_name,"\n";
 
 //지시자가 private이기 때문에 접근 권한이 없다.
 // $obj_student->$std_id = "갑돌이 id";
 
 // getter, setter로 private 객체에 접근
-$obj_student->set_std_id("갑순이id");
-echo $obj_student->get_std_id();
+// $obj_student->set_std_id("갑순이id");
+// echo $obj_student->get_std_id();
 
+
+//생성자(constructor)
+
+class food
+{
+    private $food_name;
+
+    //생성자
+    public function __construct($parama_food_name)
+    {
+        $this->food_name = $parama_food_name; //연산에 필요한 조건들을 넣을 수 있다.
+        
+    }
+    public function print_food_name()
+    {
+        echo $this->food_name;
+    }
+}
+$obj_food = new food("탕수육");
+$obj_food->print_food_name();
 
 
 
