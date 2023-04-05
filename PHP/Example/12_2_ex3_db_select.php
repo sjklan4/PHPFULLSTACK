@@ -21,9 +21,9 @@ $arr_prepare =
         ":limit_start" => 5
     );
     
-$stmt = $obj_conn->prepare($sql);
-$stmt->execute($arr_prepare);
-$result = $stmt->fetchAll();
+$stm = $obj_conn->prepare($sql);
+$stm->execute($arr_prepare);
+$result = $stm->fetchAll();
 
 print_r($result);
 
