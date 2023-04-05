@@ -25,13 +25,13 @@
     // echo $arr_ass["1.5"];
 
 //다차원 배열
-    $arr_temp = array(
-                    array(1,2,3,4)
-                    ,array(5,6,7,8)
-                    ,array(
-                        array(9,10,11), array(12,13,14)
-                    )
-    );
+    // $arr_temp = array(
+    //                 array(1,2,3,4)
+    //                 ,array(5,6,7,8)
+    //                 ,array(
+    //                     array(9,10,11), array(12,13,14)
+    //                 )
+    // );
 
     // echo $arr_temp[1][3],"\n";
     // echo $arr_temp[1][2],"\n";
@@ -107,6 +107,7 @@
 
     // }
 // foreach(범위 변수 이름 as 값을 가져오는 방법 - $키이름 => $값 or as $값 만 사용시 출력 문구에 "표현하려는 키값 = ". $받아오려는 값)
+
 
 
 
