@@ -142,9 +142,9 @@ $sum_dl_score = array_sum($dl_card_score) ;
 // print_r($user_card_arr);
 // print_r($dl_card_arr);
 
-// $base_num = 21; //기준 비교값
-// $diff1 = ($base_num - $sum_user_score);
-// $diff2 = ($base_num - $sum_dl_score);
+$base_num = 21; //기준 비교값
+$diff1 = abs($base_num - $sum_user_score);
+$diff2 = abs($base_num - $sum_dl_score);
 
 // echo $sum_user_score, "\n" ;
 // echo$sum_dl_score ,"\n" ;
@@ -160,123 +160,26 @@ $sum_dl_score = array_sum($dl_card_score) ;
 
 while(true) 
 {
-    foreach($user_card_arr as $card)
-    {
-        echo "내카드 : ".$card["number"]." ".$card["suit"]."\n";
-        echo "\n";
-    }
-    echo "내 점수 : ".$sum_user_score."\n";
-    echo "게임 시작~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-    print "\n";
-    print "\n";
-    print "\n";
-    print "\n";
-	// print "\n";
-
-    if (array_sum($dl_card_score) < 17) 
-    {
-        $dlcard = randomCard($deck);
-        $dl_card_arr[] = $dlcard; // 딜러 카드를 받아서 배열을 저장시킨다. 
-        $dl_score = score_card($dlcard);
-        $dl_card_score[] = $dl_score;//딜러 카드 점수를 배열로 저장 시킨다.
-        $sum_dl_score += $dl_score;
-    }
-
-    echo "카드를 한 장 더 받으시려면 1을, 카드를 확인하려면 2번을, 그만 받으시려면 0을 입력하세요. : ";
-    fscanf(STDIN, "%d\n", $input);	
-    
-
-
-        if($input === 0 ) 
-            {
-                break;
-            }
-
-        elseif ( $sum_user_score === 21 || $sum_dl_score === 21) 
+        foreach($user_card_arr as $card)
         {
-            echo "21점이 나왔습니다. 플레이어 전체 카드 OPEN!";
-            // $base_num = 21; //기준 비교값
-            // $comp_user = asb($base_num - $sum_user_score);
-            // $comp_dl = abs($base_num - $sum_dl_score);
-
-            if ($sum_user_score === 21) 
-            {
-                foreach($user_card_arr as $card)
-                {
-                    echo "내카드 : ".$card["number"]." ".$card["suit"]."\n";
-                    echo "\n";
-                }
-                echo " | "."내 점수 : ".$sum_user_score." | "."\n";
-
-                foreach($dl_card_arr as $card)
-                {
-                    echo "딜러 카드 : ".$card["number"]." ".$card["suit"]."\n";
-                    
-                }
-                echo" | "."현재 딜러 카드점수 : ".$sum_dl_score." | "."\n";
-                echo " 유저 승!";
-            }
-
-            elseif ($sum_user_score === $sum_dl_score) 
-            {
-                if (count($user_card_arr) < count($dl_card_arr)) 
-                {
-                    echo "딜러 카드수 : ".count($dl_card_arr)."장 이다. 패! \n";
-                    echo "내 카드수 : ".count($user_card_arr)."장 이다. 승!";
-                }
-                elseif (count($user_card_arr) === count($dl_card_arr)) 
-                {
-                    $user_clist_rank = card_lever($usercard);
-                    $user_rank_score = array_sum($user_clist_rank);
-                    $dl_clist_rank = card_lever($dlcard);
-                    $dl_rank_score = array_sum($dl_clist_rank);
-                    if ($user_rank_score > $dl_rank_score) 
-                    {
-                        echo "딜러의 카드랭크 점수가".$dl_clist_rank."점 으로 딜러 패!\n";
-                        echo "유저의 카드랭크 점수가".$user_clist_rank."점 으로  유저 승!";
-                    }
-                    elseif($user_rank_score === $dl_rank_score)
-                    {
-                        echo "무승부";
-                    }
-                    else
-                    {
-                        echo "딜러의 카드랭크 점수가".$dl_clist_rank."점 으로 딜러 승!\n";
-                        echo "유저의 카드랭크 점수가".$user_clist_rank."점 으로  유저 패!";
-                    }  
-                }
-                else 
-                {
-                    echo "딜러 카드수 : ".count($dl_card_arr)."장 이다. 딜러 승! \n";
-                    echo "내 카드수 : ".count($user_card_arr)."장 이다. 패!";
-                }
-            }
-
-            elseif($sum_dl_score === 21)
-            {
-                foreach($user_card_arr as $card)
-                {
-                    echo "내카드 : ".$card["number"]." ".$card["suit"]."\n";
-                    echo "\n";
-                }
-                echo " | "."내 점수 : ".$sum_user_score." | "."\n";
-
-                foreach($dl_card_arr as $card)
-                {
-                    echo "딜러 카드 : ".$card["number"]." ".$card["suit"]."\n";
-                    
-                }
-                echo" | "."현재 딜러 카드점수 : ".$sum_dl_score." | "."\n";
-                echo " 딜러 승!";
-                break;
-            }
-
-            echo "***********************************************************************************\n";
+            echo "내카드 : ".$card["number"]." ".$card["suit"]."\n";
+            echo "\n";
         }
-
-
-        elseif ($input === 1) 
-        {
+        echo "내 점수 : ".$sum_user_score."\n";
+	// print "\n";
+    
+    echo "카드를 한 장 더 받으시려면 1을, 카드를 확인하려면 2번을, 그만 받으시려면 0을 입력하세요. : ";
+    fscanf(STDIN, "%d\n", $input);	      
+if($input === 0 ) 
+    {
+		break;
+	}
+    elseif ( $sum_user_score === 21) 
+    {
+        echo "내가 이겼다!\n";
+        echo "***********************************************************************************\n";
+    }
+    else if ($input === 1) {
         echo "***********************************************************************************\n";
         echo "1번 : 카드를 뽑습니다.\n";
         $usercard = randomCard($deck);
@@ -286,11 +189,7 @@ while(true)
         echo "내가 뽑은 카드 :".$usercard["number"].$usercard["suit"]."\n";
         echo "내가 뽑은 카드 점수 : ".$user_score."\n";
         $sum_user_score += $user_score; //$sum_user_score카드 범위는 score_card 함수로 인해 숫자로 인지되서 가져왔다. user_card_score도 숫자로 가져오도록 한다.
-
-            // $base_num = 21; //기준 비교값
-            // $comp_user = ($base_num - $sum_user_score);
-            // $comp_dl = ($base_num - $sum_dl_score);
-
+        
             if ($sum_user_score > 21) 
             {
                 echo "************************************************************************************\n";
@@ -355,24 +254,17 @@ while(true)
                     echo "내 카드수 : ".count($user_card_arr)."장 이다. 패!";
                 }
             }
-       
-            else
-            { 
-                $sum_user_score ;
-                echo "내 점수 : ".$sum_user_score."점 \n";
-                echo "***********************************************************************************\n";
-            }
-        } //1번은 카드 추가 뽑기를 진행하는 구문으로 완료 
 
+            else{ $sum_user_score ;
+                echo "내 점수 : ".$sum_user_score."점 \n";
+                echo "***********************************************************************************\n";}
+    }
     else if($input === 2) {
         echo "***********************************************************************************\n";
         echo "2번 : 카드 open.\n";
         
-            $base_num = 21; //기준 비교값
-            $comp_user = abs($base_num - $sum_user_score);
-            $comp_dl = abs($base_num - $sum_dl_score);
 
-            if($comp_user < $comp_dl)
+            if($diff1 < $diff2)
             {
                 echo "************************************************************************************\n";
                 foreach($dl_card_arr as $card)
@@ -385,9 +277,10 @@ while(true)
                 echo "\n";
                 echo "\n";
                 echo "내 점수 : ".$sum_user_score."점 내가 이겼다.";
+
             }
 
-            elseif($comp_user === $comp_dl)
+            elseif($diff1 === $diff2)
             {   
                 echo "************************************************************************************\n";
                 foreach($dl_card_arr as $card)
