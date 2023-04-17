@@ -14,6 +14,7 @@
 
 
     $limit_num = 5;
+    //배열 0번 에서는 5개 1번에 5개 2번에도 5개씩
     $offset_num = 1;
     $array_prepare =
     array(
