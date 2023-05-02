@@ -71,7 +71,7 @@ $sql = " INSERT INTO board_info ( "
     ;
     $arr_prepare = array(":board_no" => 10101, ":board_title" => "제목테스트전용", ":board_contents" => "제목테스트 중입니다." );
 
-$conn->beginTransaction();
+$conn->beginTransaction(); // 저장을 위한 과정을 실시 하기 위해 선언을 해주는 구문
 $stmt = $conn->prepare( $sql );
 $stmt->execute($arr_prepare);
 $conn->commit();
