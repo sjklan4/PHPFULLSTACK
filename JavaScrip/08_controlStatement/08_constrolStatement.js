@@ -58,7 +58,7 @@ switch ( u_age ) {
 
 
 // foreach : 배열만 루프 가능
-let arr = [1, 2, 3, 4];
+// let arr = [1, 2, 3, 4];
 
 // arr.forEach( function( val ){
 //     console.log( val );
@@ -66,7 +66,9 @@ let arr = [1, 2, 3, 4];
 
 arr = {
     u_name : "홍길동"
-    ,u_age : 0
+    ,u_age : 1
+    ,u_title : "도술"
+    ,u_level : 99
 };
 // for...in : 모든 객체를 루프 가능 - 키값을 기준으로 동작 
 for( let i in arr ){
@@ -74,9 +76,9 @@ for( let i in arr ){
 } 
 
 
-arr = [5, 4, 3, 2 ];
-arr.num = 2;
-//for...of : 
-for(let i of arr){
-    console.log( i );
-}
+// arr = [5, 4, 3, 2 ];
+// arr.num = 2;
+// //for...of : 
+// for(let i of arr){
+//     console.log( i );
+// }

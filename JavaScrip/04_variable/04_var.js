@@ -9,7 +9,7 @@
 // u_name="갑돌이";
 // console.log(u_name);
 
-//let : 중복선언 불가능, 재하랑 가능, 블록레벨 스코프 - 같은 스코프 안에서만
+//let : 중복선언 불가능, 재할당 가능, 블록레벨 스코프 - 같은 스코프 안에서만
 // let u_age = 20;
 // u_age = 30;
 
@@ -56,7 +56,6 @@ console.log("60 line : " + vartest );
 function hTest(){
     return "함수 : hTest";
 }
-
 
 
 
