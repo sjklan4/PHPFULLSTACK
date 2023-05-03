@@ -58,7 +58,8 @@ function board_insert_fnc(&$param_arr)
 $http_method = $_SERVER["REQUEST_METHOD"];
 if ( $http_method === "POST") 
 {
-    
+    $arr_post = $_POST;
+    $insert_result = board_insert_fnc($arr_post);
 }
 
 
