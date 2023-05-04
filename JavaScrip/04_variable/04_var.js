@@ -49,9 +49,9 @@
 // -------------------------------------------
 // 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당 하는 것
 // (인터프리터 : 프로그래밍 언어의 소스 코드를 바로 실행하는 컴퓨터 프로그램 또는 환경)
-// 코드가 실행되기 전에 변수와 함수를 최상단 끌어 올려지는 것
-// console.log( hTest());
-console.log("60 line : " + vartest );
+// 코드가 실행되기 전에 변수와 함수를 최상단 끌어 올려지는 것  - let : 은 호이스팅 불가능
+console.log( hTest());
+console.log("60 line : " + hTest() );
 
 function hTest(){
     return "함수 : hTest";
@@ -61,6 +61,9 @@ function hTest(){
 
 var vartest = "var : var변수";
 console.log("58 line : " + vartest);
+// console.log("60 line : " + letTest );
+// console.log("60 line : " + constTest );
 
-// let letTest = "let 변수";
+
+let letTest = "let 변수";
 const constTest = "const 상수";

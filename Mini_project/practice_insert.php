@@ -73,6 +73,9 @@ if ( $http_method === "POST")
     <title>Document</title>
 </head>
 <body>
+    <form method ="POST" action="practice_insert.php">
+
     
+    </form>
 </body>
 </html>
