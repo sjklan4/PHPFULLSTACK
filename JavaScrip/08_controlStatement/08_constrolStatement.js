@@ -12,7 +12,7 @@ if( 1 > 0 ){
     console.log("기타 등등");
 }
 
-let u_age = 30;
+let u_age = 10;
 switch ( u_age ) {
     case 20:
         console.log("20살");
