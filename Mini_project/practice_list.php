@@ -8,6 +8,7 @@ function select_info_board()
     $sql = " SELECT " 
         ." board_no "
         ." ,board_title "
+        ." ,board_contents "
         ." ,board_write_date "
         ." FROM "
         ." practice_board "
@@ -61,8 +62,9 @@ $result_info = select_info_board();
         {
         ?>
             <tr>
-                <td><?php echo $value["board_no"]?></td>
-                <td><?php echo $value["board_title"]?></td>
+                <td><a href="practice_detail.php?board_no=<?php echo $value["board_no"]?>"><?php echo $value["board_no"]?></a></td>
+                <td><a href="practice_detail.php?board_no=<?php echo $value["board_no"]?>"><?php echo $value["board_title"]?></a></td>
+                <td><a href="practice_detail.php?board_no=<?php echo $value["board_no"]?>"><?php echo $value["board_contents"]?></a></td>
                 <td><?php echo $value["board_write_date"]?></td>
             </tr>
         <?php
@@ -70,5 +72,6 @@ $result_info = select_info_board();
         ?>
     </tbody>
     </table>
+    <label id ="writ_btn"><a href="practice_insert.php"><button type = "button" id ="writ_btn">WRITE</button></a></label>
 </body>
 </html>

@@ -13,7 +13,7 @@ function board_insert_fnc(&$param_arr)
 {
     $sql = 
         " INSERT INTO practice_board( "
-        ."  ,board_title "
+        ."  board_title "
         ."  ,board_contents "
         ."  ,board_write_date "
         ."  ) "
@@ -74,8 +74,10 @@ if ( $http_method === "POST")
 </head>
 <body>
     <form method ="POST" action="practice_insert.php">
-
-    
+    제목<input type="text" name = "board_title">
+    내용<input type="text" name = "board_contents">
+    <label id ="write"><button type = "submit" id = "write">WRITE</button></label>
+    <label id ="list"><a href="practice_list.php"><button type = "button" id = "list">LIST</button></a></label>
     </form>
 </body>
 </html>

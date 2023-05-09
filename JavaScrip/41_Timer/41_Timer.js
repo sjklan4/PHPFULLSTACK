@@ -31,17 +31,48 @@
 //     }
 // },1000);
 
-const clock = document.querySelector(".time_clock");
+
+//아래 구문은 현재 시간 분 초 만을 가져 오는 구문이다.
+const clock = document.querySelector(".time_clock"); //html과 연결하기 위해 쿼리 문으로 가져 왓다.
+
 function getTime(){
 let today = new Date();   
 let hours = today.getHours(); // 시
 let minutes = today.getMinutes();  // 분
 let seconds = today.getSeconds();  // 초
+// clock.innerHTML =  hours + ':' + minutes + ':' + seconds;
 
-clock.innerHTML = hours + ':' + minutes + ':' + seconds;
+const clock2 = document.querySelector(".time_clock2");
+clock2.innerHTML = today.toLocaleTimeString();
+
+if(hours <= 12 && hours >= 6){
+    clock.innerHTML = '오전 ' + hours + ':' + minutes + ':' + seconds;
+}
+else if(hours >= 12 && hours < 22){
+    clock.innerHTML = '오후 ' + hours + ':' + minutes + ':' + seconds;
+}
+else if(hours >= 22 && hours <= 24){
+    clock.innerHTML = '어서오세요 달밤 ' + hours + ':' + minutes + ':' + seconds;
+}
+else{
+    clock.innerHTML ='새벽' + hours + ':' + minutes + ':' + seconds;
+}
 }
 
-function init(){
-    setInterval(getTime, 1000);
-}
-init();
+const clock_move = setInterval(getTime, 1000); //위에서 가져온 값을 F5번을 하지 않고도 계속 실행되도록 한다.
+
+//-----아래 함수는 setInterval을 함수화 시킨 것이다. --------//
+// function init(){
+//     setInterval(getTime, 1000);
+// }
+// init();
+
+const stop_btn = document.getElementById('stop_btn');
+stop_btn.addEventListener('click',function(){
+    clearInterval(clock_move);
+});
+
+const start_btn = document.getElementById('start_btn');
+start_btn.addEventListener('click', function(){
+        setInterval(getTime, 1000);
+});
