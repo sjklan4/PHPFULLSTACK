@@ -74,29 +74,43 @@ function study() {
 // goToSchool();
 // school_promise().then(function(){study();}); // ??then 안에 function을 사용시 ()를 붙이고 사용하는가?
 
-
-function school_promise(){
-    return new Promise((resolve, reject) => {
+function school_gogo(){
+    return new Promise(resolve => {
         setTimeout(function() {
-            var status = Math.floor(Math.random()*2);
-            if(status ===1){
-                resolve(console.log("학교에 도착했습니다."));
-            } else{
-                reject("중간에 넘어졌다.")
-            }
+            resolve(console.log("학교에 도착했습니다."));
         }, 1000);
-    });
-}
-
-function cure(){
-    console.log("병원감");
+    })
 }
 
 goToSchool();
-school_promise().then(function(resolve){console.log(resolve);
-        study();
-    })
-    .catch(function(reject){
-        console.log(reject);
-        cure();
-    });
+school_gogo().then(function(){study();});
+
+
+
+
+
+// function school_promise(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(function() {
+//             var status = Math.floor(Math.random()*2);
+//             if(status ===1){
+//                 resolve(console.log("학교에 도착했습니다."));
+//             } else{
+//                 reject("중간에 넘어졌다.")
+//             }
+//         }, 1000);
+//     });
+// }
+
+// function cure(){
+//     console.log("병원감");
+// }
+
+// goToSchool();
+// school_promise().then(function(resolve){console.log(resolve);
+//         study();
+//     })
+//     .catch(function(reject){
+//         console.log(reject);
+//         cure();
+//     });
