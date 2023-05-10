@@ -1,14 +1,22 @@
 //https://picsum.photos
 
-const url = "https://picsum.photos/v2/list?page=7&limit=5";
-const body = document.getElementsByTagName
-//------아래 fetch부터 구문은 데이터를 받아 오는 역활과 순서를 지정 해주고 있다.-------//
-fetch(url) //받아온 api주소를 배열 값으로 요청 한다.(promise값으로 받아온다.)
-    .then(res  => {return res.json()})//json값으로 받아와서 배열 값으로 사용 할 수 있도록 만들어 준다.
-    .then(data => makeList(data))//data형식으로 받아 온다. 
-    .catch(console.log);
+
+// const url = "https://picsum.photos/v2/list?page=7&limit=5";
+// const body = document.getElementsByTagName
+
+function cpi(){
+    const input_url = document.getElementById('input_url');
+    const url = input_url.value;
+    fetch(url) 
+        .then(res  => {return res.json()})
+        .then(data => makeList(data))
+        .catch(console.log);
+}
+
 
 function makeList(data){
+    const div = document.querySelector('div');
+    div.innerHTML = '';
     data.forEach(item => {
         console.log(item);
         const tagImg = document.createElement('img');
