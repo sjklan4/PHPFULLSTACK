@@ -31,7 +31,6 @@ curl_close($ch);
 
 var_dump($response);
 //var_dump($json["TBGGSTATNELVM"][1]["row"]);
-
 ?> 
 
 <?php 
