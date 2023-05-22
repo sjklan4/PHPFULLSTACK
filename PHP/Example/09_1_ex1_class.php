@@ -21,6 +21,7 @@ class student
         echo $result_age;
 
     }
+
     //private 객체를 사용할 수 있는 방법 : set,get을 나눈 이유 - 함수로 되어 있기 때문에 각 함수마다 한가지 일만 하도록 해야 되기 때문에
     public function set_std_id($param_id)
     {
@@ -33,13 +34,13 @@ class student
         return $this->std_id;
     }
 
-
 }
 
 //class를 선언
 $obj_student = new Student; //클래스를 불러온다.
 // class의 method를 호출
 // $obj_student->print_student("홍길동",27);
+
 
 // class의 멤버변수 사용방법
 // $obj_student->std_name = "갑돌이";
