@@ -1,0 +1,72 @@
+
+async function delbtn(){
+    const chkUserData = await chkUser(); // 유저 정보체크 API 함수 호출
+    if(chkUserData.flg === '1') {
+        // 유저 정보체크 정상일 때
+        const withdrawData = await withdrawUser(); // 탈퇴 API 함수 호출
+        if(withdrawData.errflg === '0') {
+             // 탈퇴처리가 정상일 때
+            alert(withdrawData.msg); // 알러트로 탈퇴완료 메세지 표시
+            location.href = withdrawData.url; // 메인페이지로 이동
+        }
+    } else {
+        // 유저 정보 체크 비정상일 때
+        alert(chkUserData.msg)
+    }
+
+    return false;
+}
+
+async function chkUser() {
+    const getpass = prompt("비밀번호를 입력하세요."); // 입력시 비밀번호가 getpass에 담긴다.
+
+    if(getpass){
+        const url = "/api/userdl"; // URL
+        try {
+            // API 호출
+            const response = await fetch(url, {
+                method : "POST"
+                , header: {"Content-Type": "application/json"}
+                ,body: JSON.stringify({u_pw: getpass})
+            });
+
+            // JSON 파싱
+            const json = response.json();
+
+            // 결과 체크
+            if(response.ok && response.status === 200) {
+                return json; // response 정상 : json 리턴
+            }
+            return false; // response 이상 : false 리턴
+        } catch (e) {
+            return false; // API호출 ~ 예외처리 : false 리턴
+        }
+    } else {
+        return false; // 비밀번호 입력 취소 : false 리턴
+    }
+}
+
+async function withdrawUser() {
+    const confirmDelete = confirm("정말 탈퇴하시겠습니까?");
+
+    if(confirmDelete){
+        const url = "/api/del";
+        try {
+            // API 호출
+            const response = await fetch(url);
+
+            // JSON 파싱
+            const json = response.json();
+
+            // 결과 체크
+            if(response.ok && response.status === 200) {
+                return json; // response 정상 : json 리턴
+            }
+            return false; // response 이상 : false 리턴
+        } catch (e) {
+            return false; // API호출 ~ 예외처리 : false 리턴
+        }
+    } else {
+        return false; // 탈퇴 취소 : false 리턴
+    }
+}

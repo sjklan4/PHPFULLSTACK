@@ -1,0 +1,79 @@
+0523
+라우터에 들어가는 서명 기능은 controller에서 주로 사용 된다.
+라우터는 보통 한줄만 출력하는게 특징
+.env 파일에서는 #이 주석 처리  - 가능한 건들지 않는다.
+컨트롤러 만들기
+아래와 같은 구문을 터미널에 입력해주고 / 입력전에 터미널에 위치 확인 - 폴더로
+php artisan make:controller (컨트롤러 이름을 지정)
+
+controller불러오기 
+use  App\Http\Controllers\TestController;
+Route::get('/URL명칭', [컨트롤러명::class, 'method명']) -> name(옆에 만들어준 Route의 명칭을 지정해준다);
+
+- routes의 web에서 위 구문을 가지고 controller를 불러오고
+controller에 만들어 놓은 컨트롤러 명에 method를 만들어서 그 method를
+url로 불러 오도록 한다. 
+
+전체 모양은
+유저 -> route -> 컨트롤러 -> view방식으로 동작 한다.
+route에서 지정한 동작 방식에 따라 컨트롤러에서 처리를 시작한다. 
+
+보내려는 값을 컨트롤러에 설정하고 뷰에서 변수로 해서 출력만
+해도 가능하다.
+아래는 컨트롤러 에서의 구문
+return view('test')->with('name', '아카이브');
+
+아래는 뷰에서의 구문이다.
+ <h1>Test여긴 뷰이다!!!!!.index</h1>
+    <h5>{{$name}}</h5>
+
+아래 구문은 컨트롤러 추가시 보여주는 터미널의 내용들이다 주의사항은 경로에 현재 있는 laravel위치를 확인해야 한다.
+확인시 위치가 틀리면 'cd 파일위치' 를 작성해서 위치를 잡아주고 'php ardisan make:controller 컨트롤러 이름 --resourece<옵션명>'을 작성시 옵션이 붙어 있는 컨트롤러가 생성된다.
+
+tip . laravel blade 확장 프로그램을 설치하고 설정에서 include languages에서 항목에 
+blade에 html을 추가 시켜준다.
+PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel> php artisan make:controller TasksController --resource
+Could not open input file: artisan
+PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel> cd edu-laravel
+PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-laravel> php artisan make:controller TasksController --resource
+
+INFO  Controller [D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-laravel\app/Http/Controllers/TasksController.php] created successfully.
+
+아래는 리소스로 컨트롤러 생성후 리스트 조회시 터미널에서 볼 수 있는 리스트 구문이다.
+ GET|HEAD     sign ............ sign  
+  GET|HEAD    task ............ task.index › TasksController@index  
+  POST        task ............ task.store › TasksController@store  
+  GET|HEAD    task/create ..... task.create › TasksController@create  
+  GET|HEAD    task/{task} ..... task.show › TasksController@show  
+               파라미터 지정 방법 배열로 해서 ['지정이름<key>' => 보여주고자하는 값<values>]
+  PUT|PATCH   task/{task} ..... task.update › TasksController@update  
+  DELETE      task/{task} ..... task.destroy › TasksController@destroy  
+   
+  GET|HEAD    task/{task}/edit ... task.edit › TasksController@edit  
+  GET|HEAD    test ............... tests.index › TestController@index  
+  GET|HEAD    users/login ........ users.login  
+  GET|HEAD    users/logout ....... users.logout  
+  GET|HEAD    users/registration . users.registration  
+
+위의리소스 기능을 통해서 작성시 별도의 라우터 설정이 필요 없어진다.
+show 에서는 지정된 파라미터를 브라우저 주소창에서 바로 받아서 사용도 가능하다.
+??? 그럼 위의 리소스로 생성한 구문에서 publi
+
+update의 $id는 지금 컨트롤러 안에 request옆에 정해준 $id이름으로 지정할 수 있다.
+
+블레이드 템플릿은 부모값을 상속 받는다. 
+블레이드 위치에서 @include를 작성해서 인클루드 시키려는 파일의 위치를 지정해 준다.
+
+실제 부른 파일은 blade파일 이다. 라우터에서 블레이드 파일을 부르면 블레이트 컨트롤러에서
+뷰에 있는 블레이드를 불러오고 그곳에 상속받은 주소를 지정해 주면 그 주소에 있는 include주소에 있는 
+내용을 보여 주는것으로 다시 include에 최종 받아올 결과물의 주소를 지정해 주어야 한다.
+
+@yield(자식의 타이틀, '부모의 타이틀')
+
+key (key,이름)을 기준으로 서로 연결 되어 진다. 
+ 부모이름을 줄때는 주려는 폴더에 @yield(이름)을 적고 @section(부모이름) @endsection으로 묶어 준다.
+
+
+ 블레이드는 section으로 묶어야 순서대로 출력이 가능하다
+   ineration은 루프문의 반속 횟수를 보여준다. 몇번째 돌아서 나온 것인지를 알려준다. 교제 p.125참조
+ **블레이드의 layout은 별도의 폴더에 
