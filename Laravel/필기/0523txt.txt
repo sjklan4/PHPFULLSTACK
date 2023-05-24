@@ -4,11 +4,12 @@
 .env 파일에서는 #이 주석 처리  - 가능한 건들지 않는다.
 컨트롤러 만들기
 아래와 같은 구문을 터미널에 입력해주고 / 입력전에 터미널에 위치 확인 - 폴더로
-php artisan make:controller (컨트롤러 이름을 지정)
+**php artisan make:controller (컨트롤러 이름을 지정)
 
 controller불러오기 
-use  App\Http\Controllers\TestController;
+use  App\Http\Controllers\TestController; : web파일에서 컨트롤러를 지정해서 사용하기 위해서 작성하는구문(터미널에 작성X) 
 Route::get('/URL명칭', [컨트롤러명::class, 'method명']) -> name(옆에 만들어준 Route의 명칭을 지정해준다);
+
 
 - routes의 web에서 위 구문을 가지고 controller를 불러오고
 controller에 만들어 놓은 컨트롤러 명에 method를 만들어서 그 method를
@@ -21,14 +22,14 @@ route에서 지정한 동작 방식에 따라 컨트롤러에서 처리를 시�
 보내려는 값을 컨트롤러에 설정하고 뷰에서 변수로 해서 출력만
 해도 가능하다.
 아래는 컨트롤러 에서의 구문
-return view('test')->with('name', '아카이브');
+return view('test')->with('name', 'value'); name : 컨트롤러에서 데이터를 불러오기 위한 이름지정 , value : 담길 값  
 
 아래는 뷰에서의 구문이다.
  <h1>Test여긴 뷰이다!!!!!.index</h1>
     <h5>{{$name}}</h5>
 
 아래 구문은 컨트롤러 추가시 보여주는 터미널의 내용들이다 주의사항은 경로에 현재 있는 laravel위치를 확인해야 한다.
-확인시 위치가 틀리면 'cd 파일위치' 를 작성해서 위치를 잡아주고 'php ardisan make:controller 컨트롤러 이름 --resourece<옵션명>'을 작성시 옵션이 붙어 있는 컨트롤러가 생성된다.
+확인시 위치가 틀리면 'cd 파일위치' 를 작성해서 위치를 잡아주고 'php artisan make:controller 컨트롤러 이름 --resourece<옵션명>'을 작성시 옵션이 붙어 있는 컨트롤러가 생성된다.
 
 tip . laravel blade 확장 프로그램을 설치하고 설정에서 include languages에서 항목에 
 blade에 html을 추가 시켜준다.
@@ -39,7 +40,7 @@ PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-laravel> php artis
 
 INFO  Controller [D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-laravel\app/Http/Controllers/TasksController.php] created successfully.
 
-아래는 리소스로 컨트롤러 생성후 리스트 조회시 터미널에서 볼 수 있는 리스트 구문이다.
+아래는 리소스로 컨트롤러 생성후 리스트 조회시 터미널에서 볼 수 있는 리스트 구문이다. : php artisan route:list 터미널에 작성해야 되는 구문
  GET|HEAD     sign ............ sign  
   GET|HEAD    task ............ task.index › TasksController@index  
   POST        task ............ task.store › TasksController@store  
@@ -54,6 +55,16 @@ INFO  Controller [D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-lar
   GET|HEAD    users/login ........ users.login  
   GET|HEAD    users/logout ....... users.logout  
   GET|HEAD    users/registration . users.registration  
+
+view에서 a태그로 route를 정할때 view의 이름은 위 리스트에 맞춰서 지정해야 된다.
+ex : web에서 'use App\Http\Controllers\Taskcontroller;
+              Route::resource('/Task', Taskcontroller::class);' :'/이름구문은 대소문자 확인'
+view에서 정해준 route와 web에서 지정한 위 구문의 route기능을 연결 한다.
+기능은 controller의 지정 controller(ex : TaskController)를 지정해서 사용
+연결 부분은 이름 동일하게 맞춘다 위 리소스 리스트를 참고해서 맞춘다. 위 use구문에서 
+사용할 컨트롤러를 지정해서 움직이도록 한다.
+
+
 
 위의리소스 기능을 통해서 작성시 별도의 라우터 설정이 필요 없어진다.
 show 에서는 지정된 파라미터를 브라우저 주소창에서 바로 받아서 사용도 가능하다.

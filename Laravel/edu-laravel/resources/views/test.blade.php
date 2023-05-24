@@ -13,7 +13,7 @@
     <br>
     <a href="{{route('tasks.index')}}">Tasks.index</a>
     <br>
-    {{-- 아래 []안에 있는 것들의 활용 방안은? --}}
+    {{-- 아래 []안에 있는 것들의 활용 방안은 = 각각의 번호나 이름을 주어서 수정 또는 변경하고자 하는 부분을 지정해서 사용 할 수 있다. --}}
     <a href="{{route('tasks.show', ['task' => 13])}}">Tasks.show</a>
     <form action="{{route('tasks.update', ['task' => 1])}}" method = "post">
         @csrf

@@ -13,7 +13,7 @@ composer create-project laravel/laravel="9(버전)" 버전 설정 설정을 안�
 위의 php.ini에 들어가서 
 php.ini에서 zip을검색해서 extension=fileinfo 주석을 지워준다.
  아래 구문을 터미널에 입력
-composer create-project laravel/laravel="9" edu-laravel
+composer create-project laravel/laravel="9" edu-laravel(라라벨 프로젝트 디렉토리 명)
 
 아파치 의 httpd.conf를 들어 간다.
 -------------------------------------주소 경로 설정--------------------------------------------------------
@@ -23,16 +23,17 @@ DocumentRoot "${SRVROOT}/htdocs/edu-laravel/public"
 
     이 부분을 들어가서 위와 같이 수정을 한다. 
 다음 mod_rewrite모듈을 주석 해재 시켜야 된다. - 지금은 미니 프로젝트 중 변경 
+
 [LoadModule rewrite_module modules/mod_rewrite.so]
 
-laravel폴더의 edu-laravel(만들어 놓은 폴더)를 htdoc로 가져 온다.(복붙)
+laravel폴더의 edu-laravel(만들어 놓은 폴더)를 htdoc로 가져 온다.(*복붙*) composer이후에 본 파일에 라라벨 설정들이 모여 있으므로 다시 복붙을 해야 된다.
 그다음 서비스에서 아파치 재실행
 
 터미널에서 
 아래 구문 작성후 확인
-cd C:\Apache24\htdocs\edu-laravel
+cd C:\Apache24\htdocs\edu-laravel : 실행 경로 지정
 다시 아래 구문 작성 확인.
-php artisan serve
+php artisan serve : 아파치는 자동 실행으로 필수는 아님 라라벨 서버시작을 위한 구문 - 리눅스는 파일 등록시 자동 다운. - 이작업 필요
 
 git에서 확장 프로그램들 설치 진행
 
