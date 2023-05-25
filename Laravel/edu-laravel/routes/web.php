@@ -178,7 +178,7 @@ Route::get('/test', [TestController::class, 'index'])->name('tests.index');
 
 // ----------------------------------------------------------------------
 //  커멘드로 컨트롤러 생성 : php artisan make:controller TasksController --resource
-//
+//  :resource로 작성시 모든 method를 사용하도록 한다.
 // ----------------------------------------------------------------------
 use App\Http\Controllers\TasksController;
 Route::resource('/tasks', TasksController::class);
@@ -188,3 +188,10 @@ Route::resource('/tasks', TasksController::class);
 // ----------------------------------------------------------------------
 use App\Http\Controllers\BladeController;
 Route::get('blade', [BladeController::class, 'index'])->name('blade.index');
+
+//**---------------------------------------------------- */
+// 보드컨트롤러
+//**---------------------------------------------------- */
+use App\Http\Controllers\BoardController;
+Route::resource('/board', BoardController::class);
+

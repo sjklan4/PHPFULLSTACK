@@ -1,0 +1,88 @@
+---PDO class로 DB연결 하는 방법
+
+데이터 베이스가 항상 사용시 닫아주고 하는 작업을 자동으로 해줄수 있다.
+
+route 작성에서 resourece로 명령 작성시 모든 method를 사용 할 수 있도록 해준다.
+아래는 예시문이다.
+{use App\Http\Controllers\BoardController;
+    Route::resource('/board', BoardController::class);}
+
+****쿼리 빌더****
+라라벨에서 기본적으로 연결을 도와주는 방식 기존에는 pdo문에 sql문을 별도로 작성후 db를 열고 닫는작성문을 작성해야
+했으나 라라벨은 기본적으로 기능들을 제공해준다.
+
+결과물을 변수에 담아주고 DB라는 class를 통해서 sql문을 작성하여 불러 오도록 한다.
+EX> $result = DB::select('select * from categories');
+
+--조회 하기 ----
+유저의 지정된 값을 가지고 조회를 하기 위한 구문은 prepare방식으로 작성후 뒤에 키값을 설정해서 유저가 준값을
+value로 잡는다. 주의 : 직접적으로 '$유저값' 으로 받게 되면 라라벨에서 prepareST로 인식하지 않게 되면서 보안상
+의 문제가 발생한다.
+
+ex>1번 방법 $result = DB::select('select * from categories where no = :no', ['no' => $no]);
+    2번 방법 $result = DB::select('select * from categories where no = ? and no =?', [$no, $no2]);
+    $no는 변수  2번방법은 변수를 여러개를 넣겠다는 의미. 
+
+--- DB입력 ---
+insert문을 사용해서 prepare형식으로 해서 넣는다. 넣을 데이터는 뒤에 배열로 올시 []사용 금지
+변수명만 사용해서 입력값들을 설정 변수는 키값과 값을 지정해서 만들어 준다.
+EX >   $insert_con = ['category' =>'8', 'btitle'=>'제목같어','bcontent' => '내용같어', 'created_at'=>now(), 'updated_at'=>now()];
+        $result_int = DB::insert('
+        INSERT INTO boards(
+            category 
+            ,btitle
+            ,bcontent
+            ,created_at
+            ,updated_at
+        )
+        VALUES ( :category 
+        , :btitle
+        , :bcontent
+        , :created_at
+        , :updated_at)',$insert_con);
+
+o object는 php의 객체들의 모델을 나타내는 것
+r reration ship은 DB를 지칭
+m maping 둘을 짝지어 준다는 의미
+
+----빌더 체이닝 방법----
+ORM방식으로 작성 된 문이다. 
+
+DB::table(테이블 이름)->where(찾으려는 값 설정)->받는 방식 순으로 작성
+(ex) $result = DB::table('categories')->where('no', '=', $no)->dd(); - dd()는 작업 현황만 보여주고 return까지는 가지 않는다.
+    이 구문은 쿼리로 풀어 내면 select * from `categories` where `no` = ? 이 구문이다.
+
+ORM방식으로 작성된 쿼리문 예시
+$no = '5';
+$no1 = '8';
+//select * from categories` where no =: no
+$result = DB::table('categories')->where('no', '=', $no)->get(); // tip : TODO : 삭제 예정 식으로 남겨 놓는다.
+
+// ORM방식으로 작성하기 --
+// select * from categories where no = ? or no= ?
+// $resutl = DB::table('categories')->where('no', $no)->orwhere('no', $no1)->dd();
+
+// 속도 문제로 실무에서 사용은 잘 하지 않는다.
+// select * from categories where no in (?,?)
+//$resutl = DB::table('categories')->whereIn('no',[$no1, $no2])->dd();
+
+// select * from categories where no not in (?,?) -- 
+$result = DB::table('categories')->whereNotIn('no',[$no, $no1])->dd();
+
+and구문 연결시 
+'$resutl = DB::table('categories')->where('no',$no)->where('no',$no1)->where('no',$no2)......'
+
+체이닝 문의 마지막에 get()으로 넣으면 $result값에 쿼리문을 넣게 된다. 그러면 그 result값을 가지고 
+활용을 하면 된다. 
+
+테일 윈드 라는 css프레임워크를 통해서 작업을 할 수도 있다 ?? 무슨작업?????????
+
+--- 익명함수  = 클로저(라라벨에서)
+같다라고 할때는 '=' 을 생략할 수 있다.
+
+DB::raw = 현 method의 해당하는 값을 문자로 인식하도록 만들어 준다. / 예를 들어
+DB::raw(count(*))를 사용시 count(*)을 하나의 method로 인식하기 때문에 DB::raw를 
+이용해서 문자열로 바꾸어서 사용 하도록 바꾸어 주어야 한다. 
+
+groupBy는 select에 있는 컬럼을 전부다 작성해 주어야 준다. - mariadb를 제외한 모든
+db프로그램들은 컬럼을 전부다 적어 주어야 한다. 

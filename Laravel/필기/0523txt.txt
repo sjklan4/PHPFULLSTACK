@@ -37,6 +37,8 @@ PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel> php artisan make:cont
 Could not open input file: artisan
 PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel> cd edu-laravel
 PS D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-laravel> php artisan make:controller TasksController --resource
+resourece 옵션 추가시 method를 자동으로 만들어 준다. 단 필수 사항은 아니나 이름 및 규칙 조회가 필요 
+
 
 INFO  Controller [D:\Students\sangjoon\PHPFULLSTACK\PHPFULLSTACK\Laravel\edu-laravel\app/Http/Controllers/TasksController.php] created successfully.
 

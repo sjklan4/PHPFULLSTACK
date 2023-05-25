@@ -20,6 +20,7 @@ composer create-project laravel/laravel="9" edu-laravel(라라벨 프로젝트 �
 DocumentRoot "${SRVROOT}/htdocs/edu-laravel/public"
 <Directory "${SRVROOT}/htdocs/edu-laravel/public">
 ---------------------------------------------------------------------------------------------
+*****아파치설정파일 수정시 아파치 재시작 필......*********************************
 
     이 부분을 들어가서 위와 같이 수정을 한다. 
 다음 mod_rewrite모듈을 주석 해재 시켜야 된다. - 지금은 미니 프로젝트 중 변경 
