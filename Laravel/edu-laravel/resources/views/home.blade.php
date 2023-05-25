@@ -11,9 +11,8 @@
     <br>
     <br>
     <br>
+    <!-- @csrf를 작성함으로써 공격에 대한 방어요소가 된다. 보통은 모든 서비스안에 $_SESSION방식으로 들어가야 된다. -->
     <form action="/method" method ="post">
-
-<!-- @csrf를 작성함으로써 공격에 대한 방어요소가 된다. 보통은 모든 서비스안에 $_SESSION방식으로 들어가야 된다. -->
         @csrf
         <button type = "submit">POST</button>
     </form>

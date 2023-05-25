@@ -23,8 +23,9 @@ class Taskcontroller extends Controller
      */
     public function create()
     {
-        //
+        return '생성부분';
     }
+
 
     /**
      * Store a newly created resource in storage.

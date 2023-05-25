@@ -24,7 +24,7 @@ route에서 지정한 동작 방식에 따라 컨트롤러에서 처리를 시�
 아래는 컨트롤러 에서의 구문
 return view('test')->with('name', 'value'); name : 컨트롤러에서 데이터를 불러오기 위한 이름지정 , value : 담길 값  
 
-아래는 뷰에서의 구문이다.
+아래는 뷰에서의 구문이다.  -- 주소(URL)가 바뀌면 안되는건가???
  <h1>Test여긴 뷰이다!!!!!.index</h1>
     <h5>{{$name}}</h5>
 
@@ -67,15 +67,76 @@ view에서 정해준 route와 web에서 지정한 위 구문의 route기능을 �
 사용할 컨트롤러를 지정해서 움직이도록 한다.
 
 
-
 위의리소스 기능을 통해서 작성시 별도의 라우터 설정이 필요 없어진다.
 show 에서는 지정된 파라미터를 브라우저 주소창에서 바로 받아서 사용도 가능하다.
-??? 그럼 위의 리소스로 생성한 구문에서 publi
++++ resource로 작성한 controller구문은 내용상에 있는 이름에 맞춰서 하는것으로 추천
+
+*** /method 전달 방식 ***
+web에서 route에 get, post와 같은 전달 방식을 정해주고 '/주소' 지정해 주면 view단에서 from 으로 method를
+설정해준다 . ex>  ---  <form action="/method" method = "get">
+                         @csrf
+                       <button type = "submit">POST</button>
+                        </form> -----
+
+@method(route의 지정방식) : @method를 이용하면 form에서 지정한 방식을 가지고 route에 있는 전달 방법으로 
+변경해서 전달이 가능하다. 즉 @method(지정방법) 은 form의 전달방식을 method의 지정 방법으로 전달하겠다는 
+의미이다.
+ex> = route의 지정 방식  : Route::put('/method', function(){
+                            return 'PUT Method!! post로 받아 본다.!';
+                              });
+
+      view에서의 결과 출력 물 방식 : <form action="/method" method ="post">
+                                         @csrf
+                                    <button type = "submit">POST</button>
+                                      </form>
 
 update의 $id는 지금 컨트롤러 안에 request옆에 정해준 $id이름으로 지정할 수 있다.
 
+-- 라우터에서 파라미터 제어--
+
+Route::get('/query', function(Request $request){
+    return $request->id.", ".$request->name.",".$request->title;
+});
+URL주소창 = 쿼리 스트링 값에 받아온 값을 $request에서 각각 지정해서 사용하도록
+지정하는 방식
+ex> http://localhost/query?id=sjklan&name=userss&title=btitle
+    위 구문은 
+    route에서 아래의 값을 지정해 준것을 사용한 예시
+    Route::get('/query', function(Request $request){
+        return $request->id.", ".$request->name.",".$request->title;
+    });
+  url 주소창에서 id = sjklan / name = uerss / title = btitle로 해서 지정하도록 
+  하였다. 
+
+아래 구문은 segment로 지정한 ID값으로 지정해서 url에 받도록 하는구문 
+ex> http://localhost/segment/nvaer.com
+    ..../segment/입력한 값 = 지금은 naver.com이다.
+
+Route::get('/segment/{id}', function($id){
+    return 'segment ID : '.$id; 
+});
+***** $id 는 url주소를 받는 부분***
+
+아래 구문은 $id로 해서 기본 주소를 고정해서 받는 방식으로 /segement2만 입력하면
+자동으로 고정 base값으로 가도록 만드는 구문이다. 
+Route::get('/segment2/{id?}', function($id = 'base'){
+    return 'segment2 ID : '.$id;
+});
+
+http://localhost/segment2 입력 하면 화면에 리턴값이 보이도록 한다.
+
+--url전달 방식을 고정으로 해서 전달하는 방식 --
+route에 get방식으로 url주소를 지정해주고 함수화 시켜서 돌려줄 값을 지정한뒤 route에 이름을 지정 해서 
+값을 리턴시키는 방식
+ex> route::get('/names',funtion(){
+    return '돌려줄 값'
+})->name(지정할 url이름 - 'names.index')
+
+
 블레이드 템플릿은 부모값을 상속 받는다. 
 블레이드 위치에서 @include를 작성해서 인클루드 시키려는 파일의 위치를 지정해 준다.
+
+
 
 실제 부른 파일은 blade파일 이다. 라우터에서 블레이드 파일을 부르면 블레이트 컨트롤러에서
 뷰에 있는 블레이드를 불러오고 그곳에 상속받은 주소를 지정해 주면 그 주소에 있는 include주소에 있는 

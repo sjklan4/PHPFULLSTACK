@@ -10,9 +10,29 @@
 
     <h1>test Min</h1>
     <br>
-    <p>{{$name}}</p>
+    {{-- <p>{{$name}}</p> --}}
     <br>
     <a href="{{route('task.index')}}">Tasks.index</a>
+    <br>
+    <a href="{{route('만들다.create')}}">creat부분</a>
+
+    <form action="/method" method = "get">
+        @csrf
+        <button type = "submit">GET</button>
+    </form>
+    <br>
+
+    <form action="/method" method ="post">
+        @csrf
+        <button type = "submit">POST</button>
+    </form>
+    <br>
+
+    <form action="/method" method ="post">
+        @csrf
+        @method('put')
+        <button type="submit">PUT</button>
+    </form>
 
 </body>
 </html>

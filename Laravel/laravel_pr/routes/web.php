@@ -30,10 +30,46 @@ Route::get('/testpr3', function(){
 
 use App\Http\Controllers\TaskController;
 Route::resource('/task', TaskController::class);
+Route::resource('/만들다', TaskController::class);
+
+Route::get('/method', function(){
+    return 'GET Method!! get로 받아 본다.!';
+});
+
+Route::post('/method', function(){
+    return 'POST Method!! post로 받아 본다.!';
+});
+
+Route::put('/method', function(){
+    return 'PUT Method!! post로 받아 본다.!';
+});
+
+
+Route::get('/query', function(Request $request){
+    return $request->id.", ".$request->name.",".$request->title;
+});
+
+
+Route::get('/namehouse', function () {
+    return view('myview');
+});
+
+Route::get('/name' , function(){
+    return '이거 돌려줌?';
+})->name('name.index');
+
+
+
+
+
+
+
+
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 

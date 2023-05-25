@@ -81,9 +81,9 @@ Route::match(['get','post'],'/method', function(){
 });
 
 //-----------------------------------------------
-// 라우트에서 파라미터 제어
+// 라우트에서 파라미터 제어 ***********???????????????? 모르겠다. 다시......
 //-----------------------------------------------
-// 쿼리 스트링으로 파라미터 획득 - request $requst이 표현은 $에 있는 값을 request화 시키 겠다는 의미 변수를 객체로 정의 시킨다는 의미
+// 쿼리 스트링으로(URL주소창) 파라미터 획득 - request $requst이 표현은 $에 있는 값을 request화 시키 겠다는 의미 변수를 객체로 정의 시킨다는 의미
 Route::get('/query', function(Request $request){
     return $request->id.", ".$request->name.",".$request->title;
 });
@@ -117,8 +117,10 @@ Route::get('/nameshome', function(){
 
 
 Route::get('/names' , function(){
-    return 'name.index';
+    return 'here is?';
 })->name('names.index'); // 3번 방식에서 찾아가는 지정 이름을 작성하는 부분
+
+
 
 // ------------------------------------------
 // 라우트 매칭 실패시 대체 라우트 정의
