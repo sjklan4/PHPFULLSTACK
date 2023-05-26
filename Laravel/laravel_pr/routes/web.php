@@ -63,10 +63,6 @@ Route::get('/name' , function(){
 
 
 
-
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
