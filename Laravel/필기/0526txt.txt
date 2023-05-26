@@ -124,3 +124,16 @@ ex :   <form action="{{route('boards.destroy',['board' => $data->id])}}" method=
             @method('delete')
             <button type = "submit">삭제</button>
         </form>
+
+
+== new 구문 -===================
+아래 구문은 db에 없는 데이터를 가져오기 때문에 new Boards를 통해서 실행을 하게 된다. 
+    public function store(Request $req)
+    {
+        $boards = new Boards([
+            'title' => $req->input('title')
+            ,'content' => $req->input('content')
+        ]);
+        $boards->save(); //위 내용을 인서트 시키는 구문
+        return redirect('/boards'); //url로 돌아가는 구문 - 작성이 완료되면 list인 메인 페이지로 보내주는 구문
+    }
