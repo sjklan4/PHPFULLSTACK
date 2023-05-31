@@ -151,8 +151,6 @@ $result = DB::table('categories as c')->select('c.no', 'c.name')->selectRaw('COU
 //             ->get();
 
 
-
-
 return var_dump($result);
 
 }

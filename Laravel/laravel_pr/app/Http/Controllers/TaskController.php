@@ -13,7 +13,7 @@ class Taskcontroller extends Controller
      */
     public function index()
     {
-        return '실험용';
+        return view('myview');
     }   
 
     /**
@@ -23,7 +23,7 @@ class Taskcontroller extends Controller
      */
     public function create()
     {
-        return '생성부분';
+        //return '생성부분';
     }
 
 

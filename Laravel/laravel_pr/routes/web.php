@@ -29,8 +29,8 @@ Route::get('/testpr3', function(){
 });
 
 use App\Http\Controllers\TaskController;
-Route::resource('/task', TaskController::class);
-Route::resource('/만들다', TaskController::class);
+Route::resource('/index', TaskController::class);
+Route::resource('/create', TaskController::class);
 
 Route::get('/method', function(){
     return 'GET Method!! get로 받아 본다.!';

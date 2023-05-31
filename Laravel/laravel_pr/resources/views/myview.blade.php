@@ -12,7 +12,6 @@
     <br>
     {{-- <p>{{$name}}</p> --}}
     <br>
-    <a href="{{route('task.index')}}">Tasks.index</a>
     <br>
     <a href="{{route('만들다.create')}}">creat부분</a>
 
