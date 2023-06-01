@@ -86,5 +86,29 @@ class ApiListController extends Controller
     }
 
 
+--API 연결
+route의 api에서 route구문을작성해서 api주소와 설정 controller를 만들어 주려고
+controller에서 function을 작성해준다. 테스트를 위해서 postman에서 route에서 설정한 
+주소를 가지고 조회를 하는데 설정한 get, post, put, delete등에 맞춰서 만든다음에 주소를
+입력하면 작동하도록 한다. 
+ex>
+--get 통신
+- route부분 -
+	Route::get('/list/{id}', [ApiListController::class, 'getlist']);
+
+ - controller부분- 
+    function getlist($id){
+        $boards = Boards::find($id);
+        return response()->json($boards,200);
+
+    }
+
+- postman에서 조회 하는 부분 주소 - 
+		localhost/api/list/2
+
+
+라라벨에서 배열을 리턴시키면 자동으로 json으로 변경되서 보내 준다. 
+
+
 
 ******rest API는 별도 상담작업후 진행 필요!
