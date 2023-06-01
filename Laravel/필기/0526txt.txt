@@ -5,14 +5,15 @@ laravel생성문(전체 흐름 : 라라벨 폴더 생성 -> 폴더 안에 model�
 composer create_project laravel/laravel="9" board
 
 -- 모델 생성
-폴더 위치 설정후 : php artisan make:model Boards(생성모델명) -mfs(옵션으로 migration, factories, seeds) 작성
+폴더 위치 설정후 : php artisan make:model Boards(생성모델명) -mfs(옵션으로 migration, factories(대량 랜덤데이터), seeds(초기값 입력시)) 작성
 
 --테이블 생성
 DB설정중 DB의 각 컬럼별 값 설정은 migrations에서 작성
 더미데이터 입력시 또는 기타 데이터 입력시 factories에서 설정
 데이터 입력시 seeders폴더에서 DatabaseSeeder에서 경로 창을 작성후 입력
 
-: php artisan migrate --seed 로 실행
+: php artisan migrate --seed(옵션) 로 실행 : DB테이블이 생성된다. softDelete는 별도의 method설정을 통해서 사용이 가능 그외 컬럼에 따라 필요한 기능들은 별도 설정을 해야 된다. 
+ ----------------------------------------------------------------------
 
 seeders만 별도 실행시 
 php artisan db:seed 로 별도 실행이 가능하다.
@@ -43,7 +44,6 @@ class boards extends Model
     protected $guarded = ['id', 'created_at'];
 
     protected $dates = ['deleted_at'];
-
 
 }
 
