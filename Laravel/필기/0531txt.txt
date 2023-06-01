@@ -109,6 +109,9 @@ ex>
 
 라라벨에서 배열을 리턴시키면 자동으로 json으로 변경되서 보내 준다. 
 
-
+--날씨 API예시 --
+아래 주소를 controller를 통해서 요청을 보내면 아래 주소로 부터 받은 데이터를 원하는 방식으로 표현해서 출력이 가능하다.
+요청을 보내기 위해서 아래 요청한 주소에 맞춰서 조건을 맞추면 데이터를 보낼수 있고 보낸 데이터를 받아 올 수 있다.  
+https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 ******rest API는 별도 상담작업후 진행 필요!
