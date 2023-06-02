@@ -44,7 +44,7 @@ br테그를 넣으려면 중괄호 1셋트만 사용하고 양쪽에 !!두개를
 라라벨에서는 routes/api.php 에서 작성한다. : 주소창에서 localhost/api/.....로 시작한다.
 
 --Api컨트롤러 
-api컨트롤러 생성 :php artisan controllers:ApiListController
+api컨트롤러 생성 : php artisan make:controller ApiListController
 use App\Models\Boards; 컨트롤러에 use설정
 
 Api에서도 아래 use설정
@@ -86,7 +86,9 @@ class ApiListController extends Controller
     }
 
 
---API 연결
+--API 연결------------------------
+<adv> url주소안에 있는 값을 가지고 해도 되지만 정확하게 명시를 해주기 위해서 url에 값을 지정해 준다. 
+
 route의 api에서 route구문을작성해서 api주소와 설정 controller를 만들어 주려고
 controller에서 function을 작성해준다. 테스트를 위해서 postman에서 route에서 설정한 
 주소를 가지고 조회를 하는데 설정한 get, post, put, delete등에 맞춰서 만든다음에 주소를
