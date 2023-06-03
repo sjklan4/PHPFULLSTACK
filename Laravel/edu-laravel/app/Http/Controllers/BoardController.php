@@ -53,6 +53,26 @@ class BoardController extends Controller
         // where c.no in(?,?,?) order by b.bno
         // limit 5', $input);
 
+//인서트문 추가 정리
+// public function store(Request $req)
+// {
+//     $req->validate([
+//         'title' => 'require'
+//         ,'content' => 'require'
+//     ]);
+//     //쿼리 빌더로 작성시 컬럼에 들어가야 되는 값들에 대한 insert문을 전부 작성해 주어야 한다.
+//     $date = Carbon::now();
+//     DB::insert("INSERT INTO test_boards (
+//         title ,content ,created_at, updated_at, write_user_id) VALUES (?,?,?,?,?)",[$req->title, $req->content, $date,1]);
+    
+//     return redirect()->route('board.list');
+// }
+
+
+
+
+
+
         //$insert_con = ['category' =>'8', 'btitle'=>'제목같어','bcontent' => '내용같어', 'created_at'=>now(), 'updated_at'=>now()];
         // $result_int = DB::insert('
         // INSERT INTO boards(
