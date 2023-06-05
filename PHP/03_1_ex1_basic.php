@@ -43,5 +43,5 @@ echo $food_ch;
 echo $food_ch1.$price_8000.$line; 
 echo $food_ch2.$price_6000.$line;
 echo $food_ch3.$price_6000.$line;
-
+echo $test;
 ?>
