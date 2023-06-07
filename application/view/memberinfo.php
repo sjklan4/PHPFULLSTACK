@@ -31,6 +31,7 @@
                 </li>
                 <button type="button" class="btn btn-light"  onclick="location.href ='/user/changeinfo'">정보변경</button>
                 <button type = "button" class= "btn btn-light" onclick="delbtn();">회원탈퇴</button>
+
             </ul>   
             
     </div>

@@ -65,5 +65,12 @@ $arr = array("array_shift", "unshift", "array_unshift");
 echo  array_shift($arr, "shift");
 
 
+echo 'test';
+echo 'test';
+echo 'test';
+echo 'test';
+echo 'test';
+echo 'test';
+
 ?>
 
