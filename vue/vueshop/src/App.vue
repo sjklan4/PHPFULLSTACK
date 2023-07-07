@@ -2,19 +2,46 @@
   <div>
     <h1><img alt="Vue logo" src="./assets/gom.png"> SIMPLEPAGES</h1>
   </div>
-  <div class="nav">
+  <!-- <div class="nav">
     <a href="">HOME</a>
     <a href="" id="product">PRODUCT</a>
     <a href="">기타</a>
-  </div>
+  </div> -->
 
+<Nav :navList="navList"/> 
+
+<ProductList :product="product" 
+              @openModal="modalFlg = true; productnum=i" 
+              v-for="(product, i) in products" :key="i"
+              />
+
+<Modal @closeModal="modalFlg = false" 
+        :productnum="productnum"
+        :modalFlg="modalFlg" 
+        :products="products" 
+        />
+
+<!-- 연습용 모달1 -->
+<!-- <div class="bg_color" v-if="modalFlg">
+      <div class="bg_incolor">
+        <img :src="products[productnum].img">
+        <h4>상품명 :{{products[productnum].name}}</h4>
+        <p>설명 : {{products[productnum].content }}</p>
+        <p>가격 : {{ price(products[productnum].price, products[productnum].count) }} </p>
+        <p>수량 : <span>{{ products[productnum].count }}</span><button v-on:click=" products[productnum].count++;">증가</button>
+            <button  v-on:click=" products[productnum].count--;">감소</button>
+        </p>
+        <h4  @click="modalFlg = false">X</h4>
+      </div>
+    </div> -->
+<!-- ---------------------------------------------------------------- -->
 
 
 
   <!-- 테그 안에 반복문 작성 -->
   <div v-for="(item, i) in products" :key="i"> 
   <!-- 모달창 -->
-    <div class="bg_color" v-if="item.modalFlg">
+    <!-- <div class="bg_color" v-if="item.modalFlg">
       <div class="bg_incolor">
         <img :src="item.img">
         <h4>상품명 : {{ item.name }}</h4>
@@ -23,15 +50,15 @@
         <p>수량 : <span>{{ item.count }}</span><button @click="plus(i);">증가</button>
           <button  v-on:click="item.count--;">감소</button>
         </p>
-        <p @click="item.modalFlg = false">X</p>
+        <h4  @click="item.modalFlg = false">X</h4>
       </div>
-    </div>
+    </div> -->
 
     <table>
       <tr>
         <td >
           <img :src="item.img">
-          <h4 @click="item.modalFlg=true">name : {{ item.name }} </h4>
+          <h4 @click="openmodal(i);">{{ item.name }} </h4>
         </td>
         <td>
           price : {{ item.price }}원
@@ -69,22 +96,23 @@
 
 <script>
 import data from './assets/js/data.js';
+import Nav from './components/Nav.vue';
+import ProductList from './components/ProductList.vue';
+import Modal from './components/Modal.vue';
 export default {
   name: 'App',
   data(){ //데이터 바인딩
     return{
+      navList: ['남성몰','|','여성몰','|','MORDEN'],
       modalFlg:false,
       products : data,
+      productnum : 0,
       // products: [
       //   {name:'티셔츠', price: '3800', size: 'xl', fac : '강원도', count :'1', img:require('@/assets/tshirt.jpg')} //나의 서버에 있는 이미지를 가져 올때 사용하는 방법
       //   ,{name:'바지', price: '5000', size: 'xxl', fac : '말레이시아', count :'1',img:require('@/assets/pens.jpg') }
       //   ,{name:'점퍼', price: '3800', size: 's', fac : '태국', count :'1', img:require('@/assets/jumper.jpg')}
       // ],
-      product1: '양말',
-      price1: '3800', 
-      product2 : '가디건',
-      price2: '5000',
-      styleR: 'color:red',
+    
     }
   },
   methods : { // 함수를 설정하는 영역
@@ -93,9 +121,24 @@ export default {
     },
     minus(i){
       this.products[i].count--;
+    },
+    openmodal(i){
+      this.productnum = i;
+      this.modalFlg = true;
+    },
+
+    price(price, count){
+      return price * count;
     }
 
+
   },
+
+  components: {
+    Nav,
+    ProductList,
+    Modal,
+  }
 
 }
 

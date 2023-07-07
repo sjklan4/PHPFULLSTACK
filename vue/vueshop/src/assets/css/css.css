@@ -2,16 +2,18 @@
     background-color: antiquewhite;
     padding: 10px;
     border-radius: 5px;
+    margin-bottom: 30px;
   }
+
+button{
+    margin: 5px 5px;
+}
 
 a{
     margin: 10px;
     padding: 0 10px;
   }
-#product{
-    border-left: 2px solid rgb(27, 78, 3);
-    border-right: 2px solid rgb(27, 78, 3);
-}
+
 
 table{
     border: 3px solid green;
@@ -28,7 +30,7 @@ h1{
 .bg_color{
     width: 100%;
     height: 100vh;
-    background-color: rgba(250, 240, 103, 0.5);
+    background-color: rgba(44, 44, 43, 0.5);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -37,8 +39,12 @@ h1{
 .bg_incolor{
     width: 80%;
     height: 80%;
-    background-color: rgb(245, 248, 207);
+    background-color: rgb(255, 255, 255);
     margin: 60px auto;
     display: inline-block;
     border-radius: 20px;
+}
+
+h4{
+    cursor: pointer;
 }
