@@ -162,7 +162,6 @@ export default {
       //   ,{name:'바지', price: '5000', size: 'xxl', fac : '말레이시아', count :'1',img:require('@/assets/pens.jpg') }
       //   ,{name:'점퍼', price: '3800', size: 's', fac : '태국', count :'1', img:require('@/assets/jumper.jpg')}
       // ],
-    
     }
   },
   watch: { //입력된 데이터를 확인해서 실시간으로 감시 해줄수 있는 메소드 - 
