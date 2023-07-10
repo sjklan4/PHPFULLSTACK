@@ -48,3 +48,43 @@ h1{
 h4{
     cursor: pointer;
 }
+
+/* .startTransition{
+    opacity: 0;
+    transition: all 1s;
+}
+.endTransition{
+    opacity: 1;
+} */
+
+/* 등장 애니메이션 세트*/
+.modalTransition-enter-from {
+    opacity: 0;
+}
+.modalTransition-enter-active {
+    transition: all 2s;
+}
+.modalTransition-enter-to {
+    opacity: 1;
+}
+
+/* 퇴장 애니메이션 */
+.modalTransition-leave-from {
+    opacity: 1;
+}
+.modalTransition-leave-active {
+    transition: all 2s;
+}
+.modalTransition-leave-to {
+    opacity: 0;
+}
+
+.discount {
+    border-radius: 5px;
+    background: rgb(250, 250, 210);
+    padding: 20px;
+    margin: 10px;
+    font-size: x-large;
+    color: rgb(37, 0, 247);
+    box-shadow: 2px 2px 2px 2px rgba(223, 223, 223, 0.582);
+}

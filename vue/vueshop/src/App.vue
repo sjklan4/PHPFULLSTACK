@@ -10,16 +10,63 @@
 
 <Nav :navList="navList"/> 
 
+<div class="discount" v-if="hookTest">
+  <p>지금 당장 구매하시면, {{ discountNum }}% 파격할인</p>
+</div>
+<br>
+<button @click="hookTest = !hookTest">할인체크</button>
+<br>
+
 <ProductList :product="product" 
               @openModal="modalFlg = true; productnum=i" 
               v-for="(product, i) in products" :key="i"
               />
+<!-- input에서 @input을 사용해서 사용자의 입력을 실시간으로 받아 올 수 있다. 방법 1 : @input="inputTest = $event.target.value" -->
+<!--v-model="inputTest"을 사용해서 inputTest데이터 바인딩부분을 가져와서 사용할 수 있다. : 형식은 string -->
 
-<Modal @closeModal="modalFlg = false" 
+
+<!-- <br>
+<input type="text"  v-model="inputTest">
+<br> -->
+<!-- <span>{{ inputTest }}</span> -->
+
+<!-- @를 사용해서 자식쪽에 있는 $emit와 연동해서 사용이 가능하다. -->
+<!-- <Modal @closeModal="modalFlg = false" 
+        @plus = "plus(productnum);"
+        @minus = "minus(productnum);"
         :productnum="productnum"
         :modalFlg="modalFlg" 
         :products="products" 
-        />
+        /> -->
+
+<!-- 효과주기 1 -->
+<!-- <div class="startTransition" :class="{endTransition : modalFlg}">
+  <Modal @closeModal="modalFlg = false" 
+          @plus = "plus(productnum);"
+          @minus = "minus(productnum);"
+          @inputTest="productnum"
+          :productnum="productnum"
+          :modalFlg="modalFlg" 
+          :products="products" 
+            />
+</div> -->
+
+<!-- 효과주기2 -->
+<transition name="modalTransition">
+  <Modal @closeModal="modalFlg = false" 
+          @plus = "plus(productnum);"
+          @minus = "minus(productnum);"
+          @inputTest="productnum"
+          :productnum="productnum"
+          :modalFlg="modalFlg" 
+          :products="products" 
+            />
+</transition>
+ 
+
+
+
+
 
 <!-- 연습용 모달1 -->
 <!-- <div class="bg_color" v-if="modalFlg">
@@ -103,6 +150,9 @@ export default {
   name: 'App',
   data(){ //데이터 바인딩
     return{
+      discountNum : 50,
+      hookTest: false,
+      inputTest:'',
       navList: ['남성몰','|','여성몰','|','MORDEN'],
       modalFlg:false,
       products : data,
@@ -113,6 +163,14 @@ export default {
       //   ,{name:'점퍼', price: '3800', size: 's', fac : '태국', count :'1', img:require('@/assets/jumper.jpg')}
       // ],
     
+    }
+  },
+  watch: { //입력된 데이터를 확인해서 실시간으로 감시 해줄수 있는 메소드 - 
+    inputTest(input){  //  파라미터 명은 아무거나.
+      if( input.includes(3) ){
+        alert('3333');
+        this.inputTest = '';
+      }
     }
   },
   methods : { // 함수를 설정하는 영역
@@ -130,9 +188,17 @@ export default {
     price(price, count){
       return price * count;
     }
-
-
   },
+  mounted() {
+    let interval = setInterval(()=> 
+    {this.discountNum--
+      if(this.discountNum === 0){
+          clearInterval(interval);
+        }
+      }
+      , 1000);
+  },
+
 
   components: {
     Nav,

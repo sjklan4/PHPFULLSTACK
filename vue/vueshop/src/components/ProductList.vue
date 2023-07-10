@@ -1,8 +1,8 @@
 <template>
-   <div>
+   <div class="contain">
     <img :src="product.img">
         <h4 @click="$emit('openModal');">{{ product.name }}</h4>
-        <p>{{ product.price }} 원</p>
+        <p>{{ product.price *product.count }} 원</p>
         <p>{{ product.count }} 개</p>
     </div>
 </template>
@@ -14,6 +14,10 @@ export default {
     }
 }
 </script>
+
 <style>
-    
+    .contain{
+        float: left;;
+        
+    }
 </style>
