@@ -48,7 +48,7 @@
           :productnum="productnum"
           :modalFlg="modalFlg" 
           :products="products" 
-            />
+            />cd
 </div> -->
 
 <!-- 효과주기2 -->
@@ -57,13 +57,11 @@
           @plus = "plus(productnum);"
           @minus = "minus(productnum);"
           @inputTest="productnum"
-          :productnum="productnum"
+          :productnum="productnum" 
           :modalFlg="modalFlg" 
           :products="products" 
-            />
+          />
 </transition>
- 
-
 
 
 
