@@ -17,7 +17,7 @@
     <div  v-if="$store.state.tabFlg == 2">
         <div class="upload-img" :style="{backgroundImage : `url(${$store.state.imgUrl})`}" :class = "$store.state.filterClass"></div>
         <div >
-            <textarea class="write-box" name="content" id="content" placeholder="글쓰세요"></textarea>
+            <textarea class="write-box" name="content" id="content" placeholder="글쓰세요" @input ="$store.commit('contents',$event.target.value)" ></textarea>
         </div>
     </div>
 
