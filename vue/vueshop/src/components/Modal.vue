@@ -6,7 +6,6 @@
         <p>설명 : {{ products[productnum].content }}</p>
         <p>가격 : {{ products[productnum].price * inputTest }}  </p>
         <!-- <p>수량 : {{ products[productnum].count }} 개
-           
             <button @click="$emit('plus')">증가</button>
             <button  @click="$emit('minus')">감소</button>
         </p> -->

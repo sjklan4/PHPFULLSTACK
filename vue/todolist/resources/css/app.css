@@ -1,0 +1,15 @@
+.container{
+    width: 400px;
+    /* height: 100vh; */
+    margin: 0 auto;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px 1px;
+    text-align: center;
+}
+
+.post{
+    width: 200px;
+    margin: auto;
+}
